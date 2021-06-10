@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500&display=swap');
+    @font-face {
+        font-family: 'Kulachat Slab', sans-serif;
+        src: url('./font/mainfont.ttf');
+    }
+    * {
+        font-family: 'Bai Jamjuree', sans-serif;
+    }
+    /* * {
+        font-family: 'Kulachat Slab', sans-serif;
+        font-size: 1px;
+        letter-spacing: 2px;
+    } */
+    body {
+        background: rgb(24, 25, 26);
+        overflow-x: hidden;
+    }
+    @media screen and (max-width: 641px) {
+        .active {
+            border-bottom-right-radius: 18px;
+            border-top-right-radius: 18px;
+            background: #424242;
+            width: 80%;
+        }   
+    }
+
+    @media screen and (min-width: 575px) {
+        .brwow {
+            display: none;
+        }
+    }
+    .escsub .active {
+        background: none;
+        filter: drop-shadow(0px 2px 6px rgba(0, 110, 255, 0.4));
+    }
+    .normal {
+        color: #fff !important;
+    }
+    .joinbtn {
+        width: 170px;
+        height: 70px;
+        font-size: 30px;
+        transition: .3s;
+    }
+    .joinbtn:hover {
+        font-weight: bold;
+        border-radius: 8px;
+        box-shadow: 0px 4px 3px rgba(255,255,255,0.3);
+        cursor: pointer;
+    }
+    .btn {
+        border-radius: 10px;
+    }
+    .subscript {
+        color: grey;
+    }
+    .welcome {
+        background: url('img/joinbg.jpg'); /* joinbg.jpg */
+    }
+    .primarytheme {
+        color: rgb(0, 102, 255);
+    }
+    .glow h1,h2,h3,h5{
+        filter: drop-shadow(0px 2px 3px);
+    }
+    .logonav {
+        width: 30px;
+    }
+
+    #navbar {
+        transition: .3s;
+        display: block !important;
+        height: 60px;
+        /* height: 100%; */
+        overflow-y: hidden;
+    }
+    .parallaxbg {
+        background: linear-gradient(#2b2b2b, #5b5b5b);
+        /* background-image: url('/reactbeta/public/img/nextex.png'); */
+        background-attachment: fixed;
+        background-size: 500px;
+    }
+    .postview {
+        background: url('img/postbg.jpg');
+        image-rendering: auto;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+    }
+    hr {
+        width: 0%;
+        border: 3px solid #fff;
+        border-radius: 10px;
+        color: #fff;
+        transition: .9s;
+    }
+    .postimg {
+        max-width: 500px;
+        width: 100%;
+        transition: .3s;
+    }
+    .postimg:hover {
+        box-shadow: 0px 4px 3px rgba(255,255,255,0.3);
+    }
+    .boxsub {
+        max-width: 300px;
+        background: #fff;
+        border-radius: 10px;
+    }
+    #boxsub {
+        animation-duration: 0.4s;
+    }
+    .shadow {
+        border-radius: 10px;
+        box-shadow: 0px 4px 3px rgba(0,0,0,0.6);
+    }
+
+    #timeb1 {
+        animation-duration: 1s;
+    }
+
+    #timeb2 {
+        animation-delay: 0.4s;
+    }
+
+    .fixedcus {
+        margin-left: 72px;
+        margin-top: 5px;
+    }
+
+    .escsub {
+        padding-left: 380px
+    }
+
+    .hider {
+        display: none;
+    }
+
+    .airwavyzone {
+        height: 64px;
+        transition: 0.4s;
+
+    }
+
+    .footer {
+        background: rgb(0, 153, 255);
+        text-align: center;
+    }
+
+    .righticon {
+        text-align: end;
+    }
+
+    .follow {
+        background: rgb(219, 219, 219);
+        text-align: center;
+    }
+
+    .line {
+        background: url('img/backgroundairwavy.jpg');
+        background-position: -1000px;
+    }
+    .iconsize {
+        font-size: 128px;
+    }
+    .yt:hover {
+        color: red;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    .fb:hover {
+        color: rgb(0, 89, 255);
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .dev:hover {
+        filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.4));
+        transition: 0.4s;
+        cursor: pointer;
+    }
+    .linew {
+        width: 6px;
+        border-radius: 18px;
+        opacity: 78%;
+        background: rgb(0, 89, 255);
+    }
+    .comm:hover {
+        background: -webkit-linear-gradient(rgb(200, 255, 0), rgb(255, 136, 0));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: 0.3s;
+    }
+
+    .devmenu:hover {
+        background: -webkit-linear-gradient(rgb(8, 90, 0), grey);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .big1 {
+        font-size: 48px;
+    }
+
+    .bigprime {
+        font-size: 72px;
+    }
+    .highlight {
+        background: rgb(0, 89, 255);
+        filter: none;
+        max-width: 450px;
+        height: 26px;
+        width: 0%;
+        overflow: hidden;
+        transition-delay: all .7s;
+        transition: .5s;
+    }
+    .navbar-brand {
+        letter-spacing: 2.4px;
+        transition: all .5s;
+    }
+    .navbar-toggler-iconn {
+        transition: .4s;
+        font-size: 24px;
+        color: white;
+    }
+    .navbar-toggler-iconn:hover {
+        color: rgb(199, 199, 199);
+    }
+    @media screen and (min-width: 642px) {
+        .navbar-toggler-iconn {
+            display: none;
+        }
+        .mobileshow {
+            display: none;
+        }
+        .active {
+            color:rgb(0, 132, 255) !important;
+            /* filter: drop-shadow(0px 1px 0.5px); */
+            transition: 0.7s;
+            background: #424242;
+            border-radius: 18px;
+            text-decoration: none;
+            /* padding: 8px; */
+            /* padding: 4px; */
+        }   
+    }
+    .activebrand {
+        writing-mode: vertical-rl;
+    }
+    .activebody {
+        overflow: hidden;
+    }
+    .activemenu {
+        height: 1000px !important;
+    }
+    .activetog {
+        color:rgb(0, 102, 255);
+        filter: drop-shadow(0px 2px 3px);
+    }
+    .transitionex {
+        background: url('img/nextex.png');
+        background-size: 440px;
+    }
+    .ex {
+        background-color: #0072ff;
+    }
+
+    .welcomedev {
+        background: url('img/welcomedev.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: -510px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .nondeco {
+        text-decoration: none; color:black
+    }
+
+    .progressbar {
+        background: #0072ff;
+        border-radius: 18px;
+        height: 3px;
+        width: 0%;
+        z-index: 100000;
+    }
+    .progressrod {
+        background: #5b5b5b;
+    }
