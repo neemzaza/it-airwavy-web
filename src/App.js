@@ -6,13 +6,13 @@ import Navbar from './Navbar'
 import Home from './Home'
 import Footer from './Footer'
 
+import Comm from './Comm'
+import Dev from './Dev'
+
 class App extends React.Component {
-    componentDidMount() {
-        <JS />
-    }
     render() {
         return (
-            <Router>
+            <Router forceRefresh>
                 <Navbar />
                 
                 {/* Body */}
@@ -42,22 +42,6 @@ function HomePage() {
     return (
         <>
             <Home />
-        </>
-    )
-}
-
-function Comm() {
-    return (
-        <>
-            <h1 class="text-white">Community zone</h1>
-        </>
-    )
-}
-
-function Dev() {
-    return (
-        <>
-            <h1 class="text-white">Dev zone</h1>
         </>
     )
 }

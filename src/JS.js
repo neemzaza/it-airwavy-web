@@ -41,7 +41,7 @@ $(document).on('scroll', function () {
         $("#textinner").removeClass("animate__bounceIn")
         //$("#textinner").addClass("animate__bounceIn")
 
-        $("#textinner").html("<img src='" + Logo + "' width='30' />&nbsp;AirwavyIT")
+        $("#textinner").html("<img src='" + Logo + "' width='30' />&nbsp;Airwavy")
     } else { // This is #spy > 1 but in 349
         $("#navbar").css("height", "51px")
         $("hr").css("width", "0%")
@@ -57,79 +57,14 @@ $(document).on('scroll', function () {
     }
     upScroll = downScroll
 
-    if ($("#spy").offset().top >= $("#boxsub").position().top) { //On BoxSub
-        $(".stickyboxsub").addClass("fixed-top")
-
-        $(".airwavyzone").removeClass("hider")
-        $(".airwavyzone").addClass("animate__fadeIn")
-        $(".wowdes").css("display", "none")
-        $(".airwavyzone").removeClass("animate__fadeOut")
-
-        // Action...
-        $("#para1").removeClass("animate__fadeOut")
-        $("#para1").addClass("animate__fadeInDown")
-
-    }
-    if ($("#spy").offset().top <= $("#spybox").position().top) {
-        $(".airwavyzone").removeClass("animate__fadeIn")
-        $(".airwavyzone").addClass("animate__fadeOut")
-
-        $(".airwavyzone").addClass("hider")
-        $(".wowdes").css("display", "block")
-        // $(".airwavyzone").css("top", "-100px")
-        $(".stickyboxsub").removeClass("fixed-top")
-        $(".stickyboxsub").removeClass("fixedcus")
-        // $(".boxsub").css("margin-left", "0px")
-        // $(".boxsub").css("margin-left", $(".boxsub").position().left + "px")
-    }
-
-
-    if ($("#spy").offset().top >= $("#about").position().top && $("#spy").offset().top < $("#ex").position().top) {
-        // Activing Menu...
-        $("#exmenu").removeClass("active")
-        $("#gamemenu").removeClass("active")
-
-        $("#aboutmenu").addClass("active")
-
-
-    }
-    else if ($("#spy").offset().top >= $("#ex").position().top && $("#spy").offset().top < $("#game").position().top) {
-        $("#aboutmenu").removeClass("active")
-        $("#gamemenu").removeClass("active")
-
-        $("#exmenu").addClass("active")
-    }
-    else if ($("#spy").offset().top >= $("#game").position().top) {
-        $("#aboutmenu").removeClass("active")
-        $("#exmenu").removeClass("active")
-
-        $("#gamemenu").addClass("active")
-    }
-
-    
-
-
-    if ($("#spy").offset().top >= $("#hereshow").position().top) {
-        $(".airwavyzone").css("top", "-100px")
-        // $(".airwavyzone").css("display","none")
-        $(".boxsub").addClass("animate__bounceOut")
-    } else {
-        $(".airwavyzone").css("top", "0px")
-        // $(".airwavyzone").css("display","block")
-        $(".boxsub").removeClass("animate__bounceOut")
-        $(".boxsub").addClass("animate__bounceIn")
-    }
-
     //progress of page end
-    for (let i = 0; i <= ($("#spy").offset().top / $(document).height()) * 100; i++) {
+    for (let i = 0; i <= ($("#spy").offset().top / $(document).height()) * 130; i++) {
         $(".progressbar").css("width", i + "%")
         // console.log(i)
     }
 
 })
 
-
-console.log(window.location.href)
 if (document.URL.includes("/")) {
     $(".home").removeClass("normal")
     $(".home").addClass("active")
@@ -138,9 +73,11 @@ if (document.URL.includes("/")) {
 
     $(".comm").removeClass("active")
     $(".devmenu").removeClass("active")
+
+    // Section 2 (Active NavBar in Main Page)
 }
 
-if (document.URL.includes("/comm")) {
+else if (document.URL.includes("/comm")) {
     $(".home").addClass("normal")
     $(".home").removeClass("active")
     $(".devmenu").removeClass("active")
@@ -149,7 +86,7 @@ if (document.URL.includes("/comm")) {
     $(".comm").addClass("active")
 }
 
-if (document.URL.includes("/dev")) {
+else if (document.URL.includes("/dev")) {
     $(".home").addClass("normal")
     $(".home").removeClass("active")
     $(".devmenu").removeClass("normal")

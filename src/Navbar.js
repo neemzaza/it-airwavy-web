@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import './App.css'
-import './JS'
+// import './JS'
 import Logo from './img/NewLogo2021.png'
+import DevLogo from './img/airwavydevnew.png'
 import $ from 'jquery'
 
 export default function Navbar() {
@@ -16,13 +17,16 @@ export default function Navbar() {
         })
     })
     return (
-        <>
+        <>  
+            <nav className="navbar fixed-top navbar-expand-sm" id="spy">
+                    {/* <!--SPY--> */}
+                </nav>
             <div className="progressbar fixed-top">
                 <div className="progressrod"></div>
             </div>
             <nav className="navbar parallaxbg navbar-expand-sm navbar-dark" id="navbar">
                 <div className="container-fluid">
-                    <a id="textinner" className="navbar-brand animate__animated" href="#"><img className='logonav' src={Logo} width="30" />&nbsp;AirwavyIT</a>
+                    <a id="textinner" className="navbar-brand animate__animated" href="#"><img className='logonav' src={Logo} width="30" />&nbsp;Airwavy</a>
                     <h6 className="text-white ontextload">Airwavy loading...</h6><noscript>&nbsp;<a className="btn btn-outline-danger btn-sm " href="#" role="button"><i className="bi bi-exclamation-octagon"></i>&nbsp;ERROR!</a></noscript>
                     
                     {/* toggle (icon mobile) */}
@@ -33,7 +37,7 @@ export default function Navbar() {
 
                             <NavLink className="home nav-link normal" aria-current="page" to="/" exact={true} ><b><i className="bi bi-house-fill"></i>&nbsp;แนะนำตัว</b></NavLink>
                             <NavLink className="comm nav-link normal" aria-current="page" to="/comm"><b><i className="bi bi-stickies-fill"></i>&nbsp;ชุมชน (สำรอง)</b></NavLink>
-                            <NavLink className="devmenu nav-link normal" aria-current="page" to="/dev"><b><i className="bi bi-code-slash"></i>&nbsp;AIRWAVY DEVELOPER</b></NavLink>
+                            <NavLink className="devmenu nav-link normal" aria-current="page" to="/dev"><b><img src={DevLogo} width="25"/>&nbsp;AIRWAVY DEVELOPER</b></NavLink>
                             <div className="linew"></div>
 
                         </div>

@@ -1,26 +1,85 @@
 import React from 'react'
-import './JS'
 
 import Pic1 from './img/post1.jpg'
 import Pic2 from './img/post2.jpg'
 
 import YouTubeSubscribe from './downloads/YouTubeSub'
+import $ from 'jquery'
+
+import GameLogo from './img/gamewalogo.png'
 
 
 class Home extends React.Component {
     componentDidMount() {
-        <JS />
+        $(document).on('scroll', () => {
+            if ($("#spy").offset().top >= $("#boxsub").position().top) { //On BoxSub
+                $(".stickyboxsub").addClass("fixed-top")
+
+                $(".airwavyzone").removeClass("hider")
+                $(".airwavyzone").addClass("animate__fadeIn")
+                $(".wowdes").css("display", "none")
+                $(".airwavyzone").removeClass("animate__fadeOut")
+
+                // Action...
+                $("#para1").removeClass("animate__fadeOut")
+                $("#para1").addClass("animate__fadeInDown")
+
+            }
+            if ($("#spy").offset().top <= $("#spybox").position().top) {
+                $(".airwavyzone").removeClass("animate__fadeIn")
+                $(".airwavyzone").addClass("animate__fadeOut")
+
+                $(".airwavyzone").addClass("hider")
+                $(".wowdes").css("display", "block")
+                // $(".airwavyzone").css("top", "-100px")
+                $(".stickyboxsub").removeClass("fixed-top")
+                $(".stickyboxsub").removeClass("fixedcus")
+                // $(".boxsub").css("margin-left", "0px")
+                // $(".boxsub").css("margin-left", $(".boxsub").position().left + "px")
+            }
+
+
+            if ($("#spy").offset().top >= $("#about").position().top && $("#spy").offset().top < $("#ex").position().top) {
+                // Activing Menu...
+                $("#exmenu").removeClass("active")
+                $("#gamemenu").removeClass("active")
+
+                $("#aboutmenu").addClass("active")
+
+
+            }
+            else if ($("#spy").offset().top >= $("#ex").position().top && $("#spy").offset().top < $("#game").position().top) {
+                $("#aboutmenu").removeClass("active")
+                $("#gamemenu").removeClass("active")
+
+                $("#exmenu").addClass("active")
+            }
+            else if ($("#spy").offset().top >= $("#game").position().top) {
+                $("#aboutmenu").removeClass("active")
+                $("#exmenu").removeClass("active")
+
+                $("#gamemenu").addClass("active")
+            }
+
+
+
+
+            if ($("#spy").offset().top >= $("#hereshow").position().top) {
+                $(".airwavyzone").css("top", "-100px")
+                // $(".airwavyzone").css("display","none")
+                $(".boxsub").addClass("animate__bounceOut")
+            } else {
+                $(".airwavyzone").css("top", "0px")
+                // $(".airwavyzone").css("display","block")
+                $(".boxsub").removeClass("animate__bounceOut")
+                $(".boxsub").addClass("animate__bounceIn")
+            }
+        })
     }
     render() {
         return (
             <div>
                 {/* <!-- This is NavBar!! --> */}
-
-                <nav className="navbar fixed-top navbar-expand-sm" id="spy">
-                    {/* <!--SPY--> */}
-                </nav>
-
-                {/* <%- include('navbar') %> */}
                 <nav className="airwavyzone navbar navbar-expand-sm navbar-light fixed-top bg-light hider animate__animated">
                     <div className="container-fluid">
                         {/* <a className="navbar-brand" href="#"></a> */}
@@ -96,8 +155,8 @@ class Home extends React.Component {
                                 <h3 className="text-white">กดติดตามเพื่อได้รับเทคนิค IT ต่างๆ มากมายที่เราจะมีให้!
                                     และกดกระดิ่งเพื่อได้รับการแจ้งเตือนอย่างไม่ขาดสายด้วยเด้อ!!</h3>
                             </div>
-                            <div className="col-md-4">
-                                {/* <!-- Empty --> */}
+                            <div className="col-md-4 wowdes inhider">
+
                             </div>
                         </div>
                     </div>
@@ -125,8 +184,7 @@ class Home extends React.Component {
                         <br /><br />
                     </div>
                 </div>
-                {/* <%- include('transitionex') %>
-        <!-- Example Zone --> */}
+                <div className="transitionex"></div>
                 <div className="ex" id="ex">
                     <div className="container">
                         <br /><br />
@@ -136,35 +194,36 @@ class Home extends React.Component {
                         <br /><br />
                     </div>
                 </div>
+                <div className="transitionex2"></div>
                 {/* <!-- Game Zone --> */}
-                <div className="gameback" id="game">
-                    <div className="container">
+                <div className="game" id="game">
+                    <div className="container gamezone">
                         <br /><br />
                         <h2 className=""><i className="bi bi-controller"></i>&nbsp;ช่องเกมของ Airwavy!!</h2>
                         <hr />
                         <div className="row">
                             <div className="col-sm-4">
-                                <img src="/img/gamelogoxd.png" className="logogame" alt="logo" />
+                                <img src={GameLogo} width="300" className="logogame" alt="logo" />
                             </div>
                             <div className="col-sm-8">
-                                <p className="para">Game with Airwavy<sup>นานๆ ลงที</sup> ถือเป็นช่องที่แยกออกมาหลังจากการเปลี่ยน Content จากช่อง Airwavy!! หลัก
+                                <p className="para">Game wA<sup>(นานๆ ลงที)</sup> ถือเป็นช่องที่แยกออกมาหลังจากการเปลี่ยน Content จากช่อง Airwavy!! หลัก
                                     ซึ่งบางทีก็ทำการ Stream เกมหรือ Cast เกมบ้างแต่อาจจะลงคลิปไม่บ่อยมากหนัก<br /><br />
 
                                     เกมจะเป็นเกม Minecraft และ Roblox ซะส่วนใหญ่
-                                    <div className=" p-4 shadow animate__animated">
-                                        <script src="https://apis.google.com/js/platform.js"></script>
 
-                                        <div className="g-ytsubscribe" data-channelid="UCKNbCnuL6Ew9e-dTJAYyncw" data-layout="full" data-count="default"></div>
-                                    </div>
                                 </p>
+                                <div className=" p-4 card shadow subgamewa animate__animated">
+                                    <script src="https://apis.google.com/js/platform.js"></script>
+
+                                    <div className="g-ytsubscribe" data-channelid="UCKNbCnuL6Ew9e-dTJAYyncw" data-layout="full" data-count="default"></div>
+                                </div>
                             </div>
                         </div>
-                        <br />
                         <hr />
                         <br />
                         <div className="row" id="rowvdo2">
-                            <div className="col-sm-6"><iframe className="youtubevdo" src="https://www.youtube.com/embed/5miJ8HGHjvA?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                            <div className="col-sm-6"><iframe className="youtubevdo" src="https://www.youtube.com/embed/1RGT3I3eJPE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            <div className="col-sm-6"><iframe className="youtubevdo" src="https://www.youtube.com/embed/5miJ8HGHjvA?controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
+                            <div className="col-sm-6"><iframe className="youtubevdo" src="https://www.youtube.com/embed/1RGT3I3eJPE?controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
                         </div>
                         <br /><br />
                     </div>
@@ -174,10 +233,6 @@ class Home extends React.Component {
             </div>
         );
     }
-}
-
-function JS() {
-    <JS />
 }
 
 export default Home
