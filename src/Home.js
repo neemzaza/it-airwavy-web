@@ -1,13 +1,15 @@
 import React from 'react'
 
-import Pic1 from './img/post1.jpg'
-import Pic2 from './img/post2.jpg'
-
 import YouTubeSubscribe from './downloads/YouTubeSub'
 import $ from 'jquery'
 
+// Include Img Zone
 import GameLogo from './img/gamewalogo.png'
+import Pic1 from './img/post1.jpg'
+import Pic2 from './img/post2.jpg'
 
+// Include JSX Zone
+import ExVideo from './ExVideo'
 
 class Home extends React.Component {
     componentDidMount() {
@@ -93,6 +95,7 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </nav>
+                {/* Welcome Message (this is sale) */}
                 <div className="welcome">
                     <div className="container p-5">
                         <br /><br /><br /><br /><br />
@@ -103,12 +106,12 @@ class Home extends React.Component {
                             <h5 className="text-white noglow highlight hi1">คุณสามารถสมัคร Supwavy! ที่ราคา 35฿ ต่อเดือน!</h5>
                         </div>
                         <br />
-                        <a href="https://www.youtube.com/c/AirwavyIT/join" target="blank"><button
-                            className="btn btn-primary joinbtn">Join!</button></a>
+                        <a className="btn btn-primary joinbtn" href="https://www.youtube.com/c/AirwavyIT/join" target="blank">JOIN</a>
                         <p className="subscript">THIS LINK IS DIRECT TO www.youtube.com/c/AirwavyIT/join</p>
                         <br /><br /><br /><br />
                     </div>
                 </div>
+                {/* Post Viewer */}
                 <div className="postview">
                     <div className="container">
                         <br /><br />
@@ -130,18 +133,19 @@ class Home extends React.Component {
 
 
                     </div>
-
+                    {/* Spy (Position Checker) of Subscribe Box */}
                     <div id="spybox"></div>
                     <div className="container stickyboxsub">
                         <div className="row">
                             <div className="col-md-4">
+                                {/* Subscribe box */}
                                 <div className="boxsub p-4 shadow animate__animated" id="boxsub">
 
                                     {/* <script src="https://apis.google.com/js/platform.js"></script>
 
                                                     <div className="g-ytsubscribe" data-channelid="UCvBnJwjxKxJ4c4mOpzyX3Zg" data-layout="full"
                                                         data-count="default"></div> */}
-
+                                    
                                     <YouTubeSubscribe
                                         channelid={"UCvBnJwjxKxJ4c4mOpzyX3Zg"}
                                         theme={"default"}
@@ -151,6 +155,7 @@ class Home extends React.Component {
 
                                 </div>
                             </div>
+                            {/* Subscribe Message */}
                             <div className="col-md-4 wowdes inhider">
                                 <h3 className="text-white">กดติดตามเพื่อได้รับเทคนิค IT ต่างๆ มากมายที่เราจะมีให้!
                                     และกดกระดิ่งเพื่อได้รับการแจ้งเตือนอย่างไม่ขาดสายด้วยเด้อ!!</h3>
@@ -184,13 +189,15 @@ class Home extends React.Component {
                         <br /><br />
                     </div>
                 </div>
+                {/* Transition Effect */}
                 <div className="transitionex"></div>
                 <div className="ex" id="ex">
                     <div className="container">
                         <br /><br />
                         <h2 className="noglow"><i className="bi bi-play-circle"></i>&nbsp;ตัวอย่างคลิปวิดีโอ</h2>
                         <hr />
-                        {/* <%- include('exvdo') %> */}
+                        {/* include EXVIDEO.js */}
+                        <ExVideo />
                         <br /><br />
                     </div>
                 </div>
