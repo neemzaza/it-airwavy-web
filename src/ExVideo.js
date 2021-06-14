@@ -32,7 +32,7 @@ export default function ExVideo() {
             <hr /> {/* LINE */}
 
             <div className="other-video">
-                <a className="btn btn-outline-light" href="https://www.youtube.com/c/AirwavyIT/videos" type="blank"><i class="bi bi-play-btn"></i>  วิดีโอเพิ่มเติม...</a>
+                <a className="btn btn-outline-light" href="https://www.youtube.com/c/AirwavyIT/videos" target="blank"><i class="bi bi-play-btn"></i>  วิดีโอเพิ่มเติม...</a>
             </div>
         </div>
     )
