@@ -9,6 +9,11 @@ import Footer from './Footer'
 import Comm from './Comm'
 import Dev from './Dev'
 
+//WIP Page
+import WIP from './WIP'
+
+const commPageFinish = false
+
 class App extends React.Component {
     render() {
         return (
@@ -23,8 +28,14 @@ class App extends React.Component {
                     </Route>
 
                     <Route path="/comm">
-                        <Comm />
-                        <Footer /> 
+                        {commPageFinish !== false ? 
+                        <>
+                            <Comm />
+                            <Footer /> 
+                        </>
+                        :
+                        <WIP />
+                        }
                     </Route>
 
                     <Route path="/dev">

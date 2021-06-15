@@ -2,6 +2,11 @@ import React from 'react'
 import './App.css'
 
 export default function ExVideo() {
+
+    // const apiKey = 'AIzaSyAnXleE8pJA096byFK-lCLyNOd4zynHqvQ'
+    // const channelID = 'UCvBnJwjxKxJ4c4mOpzyX3Zg'
+    // const maxResult = 10
+
     return (
         <div>
             <br />
