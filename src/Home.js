@@ -107,7 +107,7 @@ class Home extends React.Component {
                         </div>
                         <br />
                         <a className="btn btn-primary joinbtn" href="https://www.youtube.com/c/AirwavyIT/join" target="blank">JOIN</a>
-                        <p className="subscript">THIS LINK IS DIRECT TO www.youtube.com/c/AirwavyIT/join</p>
+                        <a href="/eiei" className="subscript">THIS LINK IS DIRECT TO www.youtube.com/c/AirwavyIT/join</a>
                         <br /><br /><br /><br />
                     </div>
                 </div>
