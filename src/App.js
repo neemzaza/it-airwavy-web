@@ -8,6 +8,7 @@ import Footer from './Footer'
 
 import Comm from './Comm'
 import Dev from './Dev'
+import Eiei from './Eiei'
 
 //WIP Page
 import WIP from './WIP'
@@ -40,6 +41,11 @@ class App extends React.Component {
 
                     <Route path="/dev">
                         <Dev />
+                        <Footer /> 
+                    </Route>
+
+                    <Route path="/eiei">
+                        <Eiei />
                         <Footer /> 
                     </Route>
                 </Switch>
