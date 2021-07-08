@@ -1,4 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500&display=swap');
+
+    /* Welcome Picture URL */
+    .welcome {
+        background: url('img/2000congrat.jpg'); /* joinbg.jpg */
+        background-position: -1500px -500px;
+    }
+    .twocongrat {
+        background: linear-gradient(yellow, rgb(255, 187, 0));
+        background-clip: text;
+        color: transparent;
+        font-size: 36px;
+    }
+    .cardwow {
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(7px);
+        width: 400px;
+        border-radius: 18px;
+    }
     :root {
         --gamePrimaryThemeColor: rgb(255, 230, 0);
         --primaryThemeColor: rgb(0, 102, 255);
@@ -68,12 +87,14 @@
     }
     .subscript {
         color: grey;
+        text-decoration: none;
     }
-    .welcome {
-        background: url('img/joinbg.jpg'); /* joinbg.jpg */
+    .subscript:hover {
+        cursor: text;
+        color: grey;
     }
     .primarytheme {
-        color: rgb(0, 102, 255);
+        color: var(--primaryThemeColor);
     }
     .glow h1,h2,h3,h5{
         filter: drop-shadow(0px 2px 3px);

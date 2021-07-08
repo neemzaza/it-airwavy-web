@@ -95,22 +95,26 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </nav>
-                {/* Welcome Message (this is sale) */}
+
+                {/* Welcome Message (this is sale ขายของ) */}
                 <div className="welcome">
                     <div className="container p-5">
                         <br /><br /><br /><br /><br />
                         <div className="glow">
-                            <h1 className="text-white big1">พร้อมที่จะได้รับ</h1>
-                            <h1 className="primarytheme bigprime">สิทธิประโยชน์จาก <br />Airwavy!! ยัง?</h1>
+                            <div className="cardwow"><h1 className="twocongrat"><i class="bi bi-award"></i> 2,000 SUB PASSED</h1></div>
+                            <h1 className="text-white big1">ขอบคุณทุกคน! 🙏🏻</h1>
+                            <h1 className="primarytheme bigprime">สำหรับ 2,000 <br />SUBSCRIBER</h1>
                             <br />
-                            <h5 className="text-white noglow highlight hi1">คุณสามารถสมัคร Supwavy! ที่ราคา 35฿ ต่อเดือน!</h5>
+                            <h5 className="text-white noglow highlight hi1">กดติดตามเพื่อไม่พลาดเทคนิคดีๆ จาก Airwavy!!</h5>
                         </div>
                         <br />
-                        <a className="btn btn-primary joinbtn" href="https://www.youtube.com/c/AirwavyIT/join" target="blank">JOIN</a>
-                        <a href="/eiei" className="subscript">THIS LINK IS DIRECT TO www.youtube.com/c/AirwavyIT/join</a>
+                        <a className="btn btn-primary joinbtn" href="https://www.youtube.com/c/AirwavyIT?sub_confirmation=1" target="blank">Subscribe</a>
+                        <br />
+                        <a href="/eiei" className="subscript">THIS LINK IS DIRECT TO www.youtube.com/c/AirwavyIT?sub_confirmation=1</a>
                         <br /><br /><br /><br />
                     </div>
                 </div>
+
                 {/* Post Viewer */}
                 <div className="postview">
                     <div className="container">
@@ -160,6 +164,7 @@ class Home extends React.Component {
                                 <h3 className="text-white">กดติดตามเพื่อได้รับเทคนิค IT ต่างๆ มากมายที่เราจะมีให้!
                                     และกดกระดิ่งเพื่อได้รับการแจ้งเตือนอย่างไม่ขาดสายด้วยเด้อ!!</h3>
                             </div>
+                            {/* ที่ว่าง */}
                             <div className="col-md-4 wowdes inhider">
 
                             </div>
@@ -189,7 +194,7 @@ class Home extends React.Component {
                         <br /><br />
                     </div>
                 </div>
-                {/* Transition Effect */}
+                {/* Transition Effect หล่อเท่ */}
                 <div className="transitionex"></div>
                 <div className="ex" id="ex">
                     <div className="container">
@@ -201,6 +206,8 @@ class Home extends React.Component {
                         <br /><br />
                     </div>
                 </div>
+
+                {/* Transition Effect หล่อเท่ 2 */}
                 <div className="transitionex2"></div>
                 {/* <!-- Game Zone --> */}
                 <div className="game" id="game">

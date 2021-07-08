@@ -9,6 +9,7 @@ import Footer from './Footer'
 import Comm from './Comm'
 import Dev from './Dev'
 import Eiei from './Eiei'
+import NotFound from './NotFound'
 
 //WIP Page
 import WIP from './WIP'
@@ -48,6 +49,10 @@ class App extends React.Component {
                         <Eiei />
                         <Footer /> 
                     </Route>
+
+                    <Route component={NotFoundPage}>
+
+                    </Route>
                 </Switch>
             </Router>
         );
@@ -66,6 +71,10 @@ function HomePage() {
 // JavaScript Zone
 function JS() {
     return <JS />
+}
+
+function NotFoundPage() {
+    return <NotFound />
 }
 
 export default App
