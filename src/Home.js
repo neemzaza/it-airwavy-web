@@ -217,7 +217,7 @@ class Home extends React.Component {
                         <hr />
                         <div className="row">
                             <div className="col-sm-4">
-                                <img src={GameLogo} width="300" className="logogame" alt="logo" />
+                                <img src={GameLogo} className="logogame" alt="logo" />
                             </div>
                             <div className="col-sm-8">
                                 <p className="para">Game wA<sup>(นานๆ ลงที)</sup> ถือเป็นช่องที่แยกออกมาหลังจากการเปลี่ยน Content จากช่อง Airwavy!! หลัก
