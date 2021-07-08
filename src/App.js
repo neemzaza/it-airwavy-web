@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './JS'
@@ -16,8 +16,10 @@ import WIP from './WIP'
 
 const commPageFinish = false
 
-class App extends React.Component {
-    render() {
+const App = () => {
+    useEffect(() => {
+        
+    }, [])
         return (
             <Router forceRefresh>
                 <Navbar />
@@ -58,7 +60,6 @@ class App extends React.Component {
         );
     }
 
-}
 
 function HomePage() {
     return (

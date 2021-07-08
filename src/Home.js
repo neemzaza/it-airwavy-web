@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import YouTubeSubscribe from './downloads/YouTubeSub'
 import $ from 'jquery'
+import axios from 'axios'
 
 // Include Img Zone
 import GameLogo from './img/gamewalogo.png'
@@ -11,74 +12,105 @@ import Pic2 from './img/post2.jpg'
 // Include JSX Zone
 import ExVideo from './ExVideo'
 
-class Home extends React.Component {
-    componentDidMount() {
-        $(document).on('scroll', () => {
-            if ($("#spy").offset().top >= $("#boxsub").position().top) { //On BoxSub
-                $(".stickyboxsub").addClass("fixed-top")
+const Home = () => {
+    const [subCount, setSubCount] = useState(0)
+    const [totalSub, setTotalSub] = useState(0)
 
-                $(".airwavyzone").removeClass("hider")
-                $(".airwavyzone").addClass("animate__fadeIn")
-                $(".wowdes").css("display", "none")
-                $(".airwavyzone").removeClass("animate__fadeOut")
+    useEffect(() => {
+        const ytKey = 'AIzaSyDDKZgyIQHgifSece0uTUd3N5RtUJTsgMc'
 
-                // Action...
-                $("#para1").removeClass("animate__fadeOut")
-                $("#para1").addClass("animate__fadeInDown")
+        const ytUser = 'UCvBnJwjxKxJ4c4mOpzyX3Zg'
 
-            }
-            if ($("#spy").offset().top <= $("#spybox").position().top) {
-                $(".airwavyzone").removeClass("animate__fadeIn")
-                $(".airwavyzone").addClass("animate__fadeOut")
+        let getSubscriber = async() => {
+            setTotalSub("loading...")
+            setSubCount("loading...")
+            await axios.get(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${ytUser}&key=${ytKey}`)
+            .then(res => {
+                // console.log(res.data["items"][0].statistics.subscriberCount)
+                setTotalSub(res.data["items"][0].statistics.subscriberCount)
+            })
+        }
 
-                $(".airwavyzone").addClass("hider")
-                $(".wowdes").css("display", "block")
-                // $(".airwavyzone").css("top", "-100px")
-                $(".stickyboxsub").removeClass("fixed-top")
-                $(".stickyboxsub").removeClass("fixedcus")
-                // $(".boxsub").css("margin-left", "0px")
-                // $(".boxsub").css("margin-left", $(".boxsub").position().left + "px")
-            }
+        getSubscriber()
+        
+    }, [])
+
+    useEffect(() => {
+        if (totalSub >= 2000) setSubCount(2000)
+        else if (totalSub >= 3000) setSubCount(3000)
+        else if (totalSub >= 5000) setSubCount(5000)
+        else if (totalSub >= 10000) setSubCount("10K")
+        else if (totalSub >= 60000) setSubCount("60K")
+        else if (totalSub >= 100000) setSubCount("100K")
+        else if (totalSub >= 700000) setSubCount("700K")
+        else if (totalSub >= 1000000) setSubCount("1M")
+        else if (totalSub >= 10000000) setSubCount("10M")
+    }, [totalSub])
+
+    $(document).on('scroll', () => {
+        if ($("#spy").offset().top >= $("#boxsub").position().top) { //On BoxSub
+            $(".stickyboxsub").addClass("fixed-top")
+
+            $(".airwavyzone").removeClass("hider")
+            $(".airwavyzone").addClass("animate__fadeIn")
+            $(".wowdes").css("display", "none")
+            $(".airwavyzone").removeClass("animate__fadeOut")
+
+            // Action...
+            $("#para1").removeClass("animate__fadeOut")
+            $("#para1").addClass("animate__fadeInDown")
+
+        }
+        if ($("#spy").offset().top <= $("#spybox").position().top) {
+            $(".airwavyzone").removeClass("animate__fadeIn")
+            $(".airwavyzone").addClass("animate__fadeOut")
+
+            $(".airwavyzone").addClass("hider")
+            $(".wowdes").css("display", "block")
+            // $(".airwavyzone").css("top", "-100px")
+            $(".stickyboxsub").removeClass("fixed-top")
+            $(".stickyboxsub").removeClass("fixedcus")
+            // $(".boxsub").css("margin-left", "0px")
+            // $(".boxsub").css("margin-left", $(".boxsub").position().left + "px")
+        }
 
 
-            if ($("#spy").offset().top >= $("#about").position().top && $("#spy").offset().top < $("#ex").position().top) {
-                // Activing Menu...
-                $("#exmenu").removeClass("active")
-                $("#gamemenu").removeClass("active")
+        if ($("#spy").offset().top >= $("#about").position().top && $("#spy").offset().top < $("#ex").position().top) {
+            // Activing Menu...
+            $("#exmenu").removeClass("active")
+            $("#gamemenu").removeClass("active")
 
-                $("#aboutmenu").addClass("active")
-
-
-            }
-            else if ($("#spy").offset().top >= $("#ex").position().top && $("#spy").offset().top < $("#game").position().top) {
-                $("#aboutmenu").removeClass("active")
-                $("#gamemenu").removeClass("active")
-
-                $("#exmenu").addClass("active")
-            }
-            else if ($("#spy").offset().top >= $("#game").position().top) {
-                $("#aboutmenu").removeClass("active")
-                $("#exmenu").removeClass("active")
-
-                $("#gamemenu").addClass("active")
-            }
+            $("#aboutmenu").addClass("active")
 
 
+        }
+        else if ($("#spy").offset().top >= $("#ex").position().top && $("#spy").offset().top < $("#game").position().top) {
+            $("#aboutmenu").removeClass("active")
+            $("#gamemenu").removeClass("active")
+
+            $("#exmenu").addClass("active")
+        }
+        else if ($("#spy").offset().top >= $("#game").position().top) {
+            $("#aboutmenu").removeClass("active")
+            $("#exmenu").removeClass("active")
+
+            $("#gamemenu").addClass("active")
+        }
 
 
-            if ($("#spy").offset().top >= $("#hereshow").position().top) {
-                $(".airwavyzone").css("top", "-100px")
-                // $(".airwavyzone").css("display","none")
-                $(".boxsub").addClass("animate__bounceOut")
-            } else {
-                $(".airwavyzone").css("top", "0px")
-                // $(".airwavyzone").css("display","block")
-                $(".boxsub").removeClass("animate__bounceOut")
-                $(".boxsub").addClass("animate__bounceIn")
-            }
-        })
-    }
-    render() {
+
+
+        if ($("#spy").offset().top >= $("#hereshow").position().top) {
+            $(".airwavyzone").css("top", "-100px")
+            // $(".airwavyzone").css("display","none")
+            $(".boxsub").addClass("animate__bounceOut")
+        } else {
+            $(".airwavyzone").css("top", "0px")
+            // $(".airwavyzone").css("display","block")
+            $(".boxsub").removeClass("animate__bounceOut")
+            $(".boxsub").addClass("animate__bounceIn")
+        }
+    })
         return (
             <div>
                 {/* <!-- This is NavBar!! --> */}
@@ -101,9 +133,9 @@ class Home extends React.Component {
                     <div className="container p-5">
                         <br /><br /><br /><br /><br />
                         <div className="glow">
-                            <div className="cardwow"><h1 className="twocongrat"><i class="bi bi-award"></i> 2,000 SUB PASSED</h1></div>
+                            <div className="cardwow"><h1 className="twocongrat"><i class="bi bi-award"></i> {subCount} SUB PASSED</h1></div>
                             <h1 className="text-white big1">ขอบคุณทุกคน! 🙏🏻</h1>
-                            <h1 className="primarytheme bigprime">สำหรับ 2,000 <br />SUBSCRIBER</h1>
+                            <h1 className="primarytheme bigprime">สำหรับ {totalSub} <br />SUBSCRIBER</h1>
                             <br />
                             <h5 className="text-white noglow highlight hi1">กดติดตามเพื่อไม่พลาดเทคนิคดีๆ จาก Airwavy!!</h5>
                         </div>
@@ -247,6 +279,5 @@ class Home extends React.Component {
             </div>
         );
     }
-}
 
 export default Home

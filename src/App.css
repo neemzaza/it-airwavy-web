@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+
     /* Welcome Picture URL */
     .welcome {
         background: url('img/2000congrat.jpg'); /* joinbg.jpg */
@@ -321,6 +323,16 @@
     }
     .navbar-toggler-iconn:hover {
         color: rgb(199, 199, 199);
+    }
+    .devfont {
+        font-family: 'JetBrains Mono', monospace;
+    }
+    .iconconfig1 {
+        font-size: 24px;
+    }
+    .blurdrop {
+        border-radius: 18px;
+        backdrop-filter: blur(7px);
     }
     @media screen and (min-width: 642px) {
         .navbar-toggler-iconn {
