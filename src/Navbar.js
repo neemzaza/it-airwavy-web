@@ -35,9 +35,9 @@ export default function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarID">
                         <div className="navbar-nav ms-auto">
 
-                            <NavLink className="home nav-link normal" aria-current="page" to="/" exact={true} ><b><i className="bi bi-house-fill"></i>&nbsp;แนะนำตัว</b></NavLink>
-                            <NavLink className="comm nav-link normal" aria-current="page" to="/comm"><b><i className="bi bi-stickies-fill"></i>&nbsp;ชุมชน (สำรอง)</b></NavLink>
-                            <NavLink className="devmenu nav-link normal" aria-current="page" to="/dev"><b><img src={DevLogo} width="25"/>&nbsp;AIRWAVY DEVELOPER</b></NavLink>
+                            <NavLink className="home nav-link normal whenhover" aria-current="page" to="/" exact={true} ><><i className="bi bi-house-fill"></i>&nbsp;แนะนำตัว</></NavLink>
+                            <NavLink className="comm nav-link normal whenhover" aria-current="page" to="/comm"><><i className="bi bi-stickies-fill"></i>&nbsp;ชุมชน (สำรอง)</></NavLink>
+                            <NavLink className="devmenu nav-link normal whenhover" aria-current="page" to="/dev"><><img src={DevLogo} width="25"/>&nbsp;AIRWAVY DEVELOPER</></NavLink>
                             <div className="linew"></div>
 
                         </div>

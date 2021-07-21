@@ -8,8 +8,11 @@ import axios from 'axios'
 import GameLogo from './img/gamewalogo.png'
 import Pic1 from './img/post1.jpg'
 import Pic2 from './img/post2.jpg'
+import oldAboutImg from './img/oldAbout.png'
 
 // Include JSX Zone
+import About from './About'
+import About2 from './About2'
 import ExVideo from './ExVideo'
 
 const Home = () => {
@@ -21,18 +24,18 @@ const Home = () => {
 
         const ytUser = 'UCvBnJwjxKxJ4c4mOpzyX3Zg'
 
-        let getSubscriber = async() => {
+        let getSubscriber = async () => {
             setTotalSub("loading...")
             setSubCount("loading...")
             await axios.get(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${ytUser}&key=${ytKey}`)
-            .then(res => {
-                // console.log(res.data["items"][0].statistics.subscriberCount)
-                setTotalSub(res.data["items"][0].statistics.subscriberCount)
-            })
+                .then(res => {
+                    // console.log(res.data["items"][0].statistics.subscriberCount)
+                    setTotalSub(res.data["items"][0].statistics.subscriberCount)
+                })
         }
 
         getSubscriber()
-        
+
     }, [])
 
     useEffect(() => {
@@ -111,173 +114,186 @@ const Home = () => {
             $(".boxsub").addClass("animate__bounceIn")
         }
     })
-        return (
-            <div>
-                {/* <!-- This is NavBar!! --> */}
-                <nav className="airwavyzone navbar navbar-expand-sm navbar-light fixed-top bg-light hider animate__animated">
-                    <div className="container-fluid">
-                        {/* <a className="navbar-brand" href="#"></a> */}
+    return (
+        <div>
+            {/* <!-- This is NavBar!! --> */}
+            <nav className="airwavyzone navbar navbar-expand-sm navbar-light fixed-top bg-light hider animate__animated">
+                <div className="container-fluid">
+                    {/* <a className="navbar-brand" href="#"></a> */}
 
-                        <div className="menuzoneair collapse navbar-collapse" id="navbarIDwow">
-                            <div className="navbar-nav escsub">
-                                <a className="nav-link" aria-current="page" href="#about" id="aboutmenu"><i className="bi bi-info-circle-fill"></i>&nbsp;เนื้อหาเกี่ยวกับและประวัติ</a>
-                                <a className="nav-link" aria-current="page" href="#ex" id="exmenu"><i className="bi bi-play-btn-fill"></i>&nbsp;ตัวอย่างคลิปวิดีโอ</a>
-                                <a className="nav-link" aria-current="page" href="#game" id="gamemenu"><i className="bi bi-controller"></i>&nbsp;บางทีก็มีช่องเกมนะ</a>
-                            </div>
+                    <div className="menuzoneair collapse navbar-collapse" id="navbarIDwow">
+                        <div className="navbar-nav escsub">
+                            <a className="nav-link" aria-current="page" href="#about" id="aboutmenu"><i className="bi bi-info-circle-fill"></i>&nbsp;เนื้อหาเกี่ยวกับและประวัติ</a>
+                            <a className="nav-link" aria-current="page" href="#ex" id="exmenu"><i className="bi bi-play-btn-fill"></i>&nbsp;ตัวอย่างคลิปวิดีโอ</a>
+                            <a className="nav-link" aria-current="page" href="#game" id="gamemenu"><i className="bi bi-controller"></i>&nbsp;บางทีก็มีช่องเกมนะ</a>
                         </div>
-                    </div>
-                </nav>
-
-                {/* Welcome Message (this is sale ขายของ) */}
-                <div className="welcome">
-                    <div className="container p-5">
-                        <br /><br /><br /><br /><br />
-                        <div className="glow">
-                            <div className="cardwow"><h1 className="twocongrat"><i class="bi bi-award"></i> {subCount} SUB PASSED</h1></div>
-                            <h1 className="text-white big1">ขอบคุณทุกคน! 🙏🏻</h1>
-                            <h1 className="primarytheme bigprime">สำหรับ {totalSub} <br />SUBSCRIBER</h1>
-                            <br />
-                            <h5 className="text-white noglow highlight hi1">กดติดตามเพื่อไม่พลาดเทคนิคดีๆ จาก Airwavy!!</h5>
-                        </div>
-                        <br />
-                        <a className="btn btn-primary joinbtn" href="https://www.youtube.com/c/AirwavyIT?sub_confirmation=1" target="blank">Subscribe</a>
-                        <br />
-                        <a href="/eiei" className="subscript">THIS LINK IS DIRECT TO www.youtube.com/c/AirwavyIT?sub_confirmation=1</a>
-                        <br /><br /><br /><br />
                     </div>
                 </div>
+            </nav>
 
-                {/* Post Viewer */}
-                <div className="postview">
-                    <div className="container">
-                        <br /><br />
-                        <h2 className="text-white">มีโพสต์ต่างๆ เกี่ยวกับสาระ IT มากมาย</h2>
-                        <hr />
-                        <div className="row">
-                            <div className="col-sm-6">
-                                <img id="timeb1" src={Pic1}
-                                    className="postimg shadow animate__animated animate__fadeOutDown" alt="post number 1" />
-                            </div>
-                            <div className="brwow"><br /></div>
-                            <div className="col-sm-6">
-                                <img id="timeb2" src={Pic2}
-                                    className="postimg shadow animate__animated animate__fadeOutDown" alt="post number 2" />
-                            </div>
-                        </div>
-                        <br /><br />
-
-
-
+            {/* Welcome Message (this is sale ขายของ) */}
+            <div className="welcome">
+                <div className="container p-5">
+                    <br /><br /><br /><br /><br />
+                    <div className="glow">
+                        <div className="cardwow"><h1 className="twocongrat rewardFont"><i className="bi bi-award"></i> {subCount} Sub Passed</h1></div>
+                        <h1 className="text-white big1">ขอบคุณทุกคน! 🙏🏻</h1>
+                        <h1 className="primarytheme bigprime">สำหรับ {totalSub} <br />SUBSCRIBER</h1>
+                        <br />
+                        <h5 className="text-white noglow highlight hi1">กดติดตามเพื่อไม่พลาดเทคนิคดีๆ จาก Airwavy!!</h5>
                     </div>
-                    {/* Spy (Position Checker) of Subscribe Box */}
-                    <div id="spybox"></div>
-                    <div className="container stickyboxsub">
-                        <div className="row">
-                            <div className="col-md-4">
-                                {/* Subscribe box */}
-                                <div className="boxsub p-4 shadow animate__animated" id="boxsub">
+                    <br />
+                    <a className="btn btn-primary joinbtn" href="https://www.youtube.com/c/AirwavyIT?sub_confirmation=1" target="blank">Subscribe</a>
+                    <br />
+                    <a href="/eiei" className="subscript">THIS LINK IS DIRECT TO www.youtube.com/c/AirwavyIT?sub_confirmation=1</a>
+                    <br /><br /><br /><br />
+                </div>
+            </div>
 
-                                    {/* <script src="https://apis.google.com/js/platform.js"></script>
+            {/* Post Viewer */}
+            <div className="postview">
+                <div className="container">
+                    <br /><br />
+                    <h2 className="text-white">มีโพสต์ต่างๆ เกี่ยวกับสาระ IT มากมาย</h2>
+                    <hr />
+                    <div className="row">
+                        <div className="col-sm-6">
+                            <img id="timeb1" src={Pic1}
+                                className="postimg shadow animate__animated animate__fadeOutDown" alt="post number 1" />
+                        </div>
+                        <div className="brwow"><br /></div>
+                        <div className="col-sm-6">
+                            <img id="timeb2" src={Pic2}
+                                className="postimg shadow animate__animated animate__fadeOutDown" alt="post number 2" />
+                        </div>
+                    </div>
+                    <br /><br />
+
+
+
+                </div>
+                {/* Spy (Position Checker) of Subscribe Box */}
+                <div id="spybox"></div>
+                <div className="container stickyboxsub">
+                    <div className="row">
+                        <div className="col-md-4 centerPos">
+                            {/* Subscribe box */}
+                            <div className="boxsub p-4 shadow animate__animated" id="boxsub">
+
+                                {/* <script src="https://apis.google.com/js/platform.js"></script>
 
                                                     <div className="g-ytsubscribe" data-channelid="UCvBnJwjxKxJ4c4mOpzyX3Zg" data-layout="full"
                                                         data-count="default"></div> */}
-                                    
-                                    <YouTubeSubscribe
-                                        channelid={"UCvBnJwjxKxJ4c4mOpzyX3Zg"}
-                                        theme={"default"}
-                                        layout={"full"}
-                                        count={"default"}
-                                    />
 
-                                </div>
-                            </div>
-                            {/* Subscribe Message */}
-                            <div className="col-md-4 wowdes inhider">
-                                <h3 className="text-white">กดติดตามเพื่อได้รับเทคนิค IT ต่างๆ มากมายที่เราจะมีให้!
-                                    และกดกระดิ่งเพื่อได้รับการแจ้งเตือนอย่างไม่ขาดสายด้วยเด้อ!!</h3>
-                            </div>
-                            {/* ที่ว่าง */}
-                            <div className="col-md-4 wowdes inhider">
+                                <YouTubeSubscribe
+                                    channelid={"UCvBnJwjxKxJ4c4mOpzyX3Zg"}
+                                    theme={"default"}
+                                    layout={"full"}
+                                    count={"default"}
+                                />
 
                             </div>
                         </div>
-                    </div>
+                        {/* Subscribe Message */}
+                        <div className="col-md-4 wowdes inhider">
+                            <h3 className="text-white">กดติดตามเพื่อได้รับเทคนิค IT ต่างๆ มากมายที่เราจะมีให้!
+                                และกดกระดิ่งเพื่อได้รับการแจ้งเตือนอย่างไม่ขาดสายด้วยเด้อ!!</h3>
+                        </div>
+                        {/* ที่ว่าง */}
+                        <div className="col-md-4 wowdes inhider">
 
-                    <br /><br />
+                        </div>
+                    </div>
                 </div>
-                <br />
-                {/* <!-- About Zone --> */}
-                <div className="about" id="about">
+
+                <br /><br />
+            </div>
+            <br />
+            {/* <!-- About Zone --> */}
+            <div className="about" id="about">
+                <section className="historyZone">
                     <div className="container">
                         <br /><br /><br /><br />
-                        <h2 className="text-white animate__animated"><i className="bi bi-info-circle"></i>&nbsp;เนื้อหาเกี่ยวกับและประวัติ</h2>
+                        <h2 className="animate__animated"><i className="bi bi-info-circle"></i>&nbsp;เนื้อหาเกี่ยวกับและประวัติ</h2>
                         <hr />
                         <div className="contentIn">
                             <div className="row">
                                 <div className="col-sm-4">
-                                    <img className="aboutimg" src="/img/about1.png" alt="ภาพประกอบตอนคลิปเก่าๆ " />
+                                    <img className="aboutimg" src={oldAboutImg} alt="ภาพประกอบตอนคลิปเก่าๆ " /><br /><br /><br /><br />
                                 </div>
                                 <div className="col-sm-8">
-                                    <p className="text-white righticon para animate__animated animate__fadeOut" id="para1">{ /*<%- include('aboutdoc') %>*/}
-                                    </p>
+                                    <div className="righticon para animate__animated animate__fadeOut" id="para1">
+                                        <About />
+                                    </div>
                                 </div>
                             </div>
+                            <br />
+                            
                         </div>
                         <br /><br />
                     </div>
-                </div>
-                {/* Transition Effect หล่อเท่ */}
-                <div className="transitionex"></div>
-                <div className="ex" id="ex">
+                </section>
+
+                <section className="aboutSec">
+                    <br/><br/>
                     <div className="container">
-                        <br /><br />
-                        <h2 className="noglow"><i className="bi bi-play-circle"></i>&nbsp;ตัวอย่างคลิปวิดีโอ</h2>
-                        <hr />
-                        {/* include EXVIDEO.js */}
-                        <ExVideo />
+                        <About2 />
                         <br /><br />
                     </div>
-                </div>
-
-                {/* Transition Effect หล่อเท่ 2 */}
-                <div className="transitionex2"></div>
-                {/* <!-- Game Zone --> */}
-                <div className="game" id="game">
-                    <div className="container gamezone">
-                        <br /><br />
-                        <h2 className=""><i className="bi bi-controller"></i>&nbsp;ช่องเกมของ Airwavy!!</h2>
-                        <hr />
-                        <div className="row">
-                            <div className="col-sm-4">
-                                <img src={GameLogo} className="logogame" alt="logo" />
-                            </div>
-                            <div className="col-sm-8">
-                                <p className="para">Game wA<sup>(นานๆ ลงที)</sup> ถือเป็นช่องที่แยกออกมาหลังจากการเปลี่ยน Content จากช่อง Airwavy!! หลัก
-                                    ซึ่งบางทีก็ทำการ Stream เกมหรือ Cast เกมบ้างแต่อาจจะลงคลิปไม่บ่อยมากหนัก<br /><br />
-
-                                    เกมจะเป็นเกม Minecraft และ Roblox ซะส่วนใหญ่
-
-                                </p>
-                                <div className=" p-4 card shadow subgamewa animate__animated">
-                                    <script src="https://apis.google.com/js/platform.js"></script>
-
-                                    <div className="g-ytsubscribe" data-channelid="UCKNbCnuL6Ew9e-dTJAYyncw" data-layout="full" data-count="default"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr />
-                        <br />
-                        <div className="row" id="rowvdo2">
-                            <div className="col-sm-6"><iframe className="youtubevdo" src="https://www.youtube.com/embed/5miJ8HGHjvA?controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
-                            <div className="col-sm-6"><iframe className="youtubevdo" src="https://www.youtube.com/embed/1RGT3I3eJPE?controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
-                        </div>
-                        <br /><br />
-                    </div>
-                </div>
-
-                {/* <%- include('footer') %> */}
+                </section>
             </div>
-        );
-    }
+            {/* Transition Effect หล่อเท่ */}
+            <div className="transitionex"></div>
+            <div className="ex" id="ex">
+                <div className="container">
+                    <br /><br />
+                    <h2 className="text-white"><i className="bi bi-play-circle"></i>&nbsp;ตัวอย่างคลิปวิดีโอ</h2>
+                    <hr />
+                    {/* include EXVIDEO.js */}
+                    <ExVideo />
+                    <br /><br />
+                </div>
+            </div>
+
+            {/* Transition Effect หล่อเท่ 2 */}
+            <div className="transitionex2"></div>
+            {/* <!-- Game Zone --> */}
+            <div className="game" id="game">
+                <div className="container gamezone">
+                    <br /><br />
+                    <h2 className=""><i className="bi bi-controller"></i>&nbsp;ช่องเกมของ Airwavy!!</h2>
+                    <hr />
+                    <div className="row">
+                        <div className="col-sm-4">
+                            <img src={GameLogo} className="logogame" alt="logo" />
+                        </div>
+                        <div className="col-sm-8">
+                            <p className="para">Game wA<sup>(นานๆ ลงที)</sup> ถือเป็นช่องที่แยกออกมาหลังจากการเปลี่ยน Content จากช่อง Airwavy!! หลัก
+                                ซึ่งบางทีก็ทำการ Stream เกมหรือ Cast เกมบ้างแต่อาจจะลงคลิปไม่บ่อยมากหนัก<br /><br />
+
+                                เกมจะเป็นเกม Minecraft และ Roblox ซะส่วนใหญ่
+
+                            </p>
+                            <div className=" p-4 card shadow subgamewa animate__animated">
+                                <script src="https://apis.google.com/js/platform.js"></script>
+
+                                <div className="g-ytsubscribe" data-channelid="UCKNbCnuL6Ew9e-dTJAYyncw" data-layout="full" data-count="default"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <br />
+                    <div className="row" id="rowvdo2">
+                        <div className="col-sm-6"><iframe className="youtubevdo" src="https://www.youtube.com/embed/5miJ8HGHjvA?controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
+                        <div className="col-sm-6"><iframe className="youtubevdo" src="https://www.youtube.com/embed/1RGT3I3eJPE?controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
+                    </div>
+                    <br /><br />
+                </div>
+            </div>
+
+            {/* <%- include('footer') %> */}
+        </div>
+    );
+}
 
 export default Home

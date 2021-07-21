@@ -19,7 +19,7 @@ export default function WIP() {
                 <hr className="notEffect"/>
                     <h5 className="text-light">โปรดรอ อาจใช้เวลาหลายวัน...</h5>
                     <br/>
-                    <a className="btn btn-outline-light" href="/"><i class="bi bi-arrow-left-circle"></i>  กลับไปยังหน้าแนะนำตัว</a>
+                    <a className="btn btn-outline-light" href="/"><i className="bi bi-arrow-left-circle"></i>  กลับไปยังหน้าแนะนำตัว</a>
                     </div>
                 </div>
             </div>

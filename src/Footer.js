@@ -31,7 +31,7 @@ export default function Footer() {
                         <br />
                         <h1 className="text-end"><b>INFO THIS WEB</b></h1>
                         <p className="paratext">© 2020 - 2021 ลิขสิทธิ์โดย Airwavy (Sarut Ardnarong) สงวนลิขสิทธิ์</p>
-                        <p className="paratext"><i className="bi bi-vector-pen"></i>   ออกแบบหน้าเว็บและลูกเล่นโดย Airwavy (DesigNWavy version 3)</p>
+                        <p className="paratext"><i className="bi bi-vector-pen"></i>   ออกแบบหน้าเว็บและลูกเล่นโดย Airwavy (DesigNWavy version 3.1)</p>
                         <p className="paratext"><i className="bi bi-person-square"></i>   เจ้าของเว็บและผู้ถูกกล่าวถึงคือ Airwavy</p>
                         <br />
                         <p className="paratextPurple"><i className="bi bi-hdd-network"></i>  โฮสติงน์เว็บโดย Heroku</p>
@@ -49,7 +49,7 @@ export default function Footer() {
                     </div>
                     <hr />
                     <div className="righticon">
-                        <a href="#" className="nondeco"><img src={Logo} width="40" alt="Airwavy's Logo"/>&nbsp;AirwavyIT</a>
+                        <a href="#" className="nondeco text-white"><img src={Logo} width="40" alt="Airwavy's Logo"/>&nbsp;AirwavyIT</a>
                     </div>
                     <br />
                     <br />
