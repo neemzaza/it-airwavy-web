@@ -9,6 +9,7 @@ import GameLogo from './img/gamewalogo.png'
 import Pic1 from './img/post1.jpg'
 import Pic2 from './img/post2.jpg'
 import oldAboutImg from './img/oldAbout.png'
+import MTALogo from './img/MTALogo.png'
 
 // Include JSX Zone
 import About from './About'
@@ -150,6 +151,52 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* Join Discord Viewer */}
+            <div className="joindiscord">
+                <div className="container p-5">
+                    <div className="glow">
+                        <div className="cardwow"><h1 className="twocongrat"><i class="bi bi-discord"></i> Join our discord</h1></div>
+                        <br/>
+                        
+                        <div className="row">
+                            <div className="col-sm-6">
+                                
+                                <div className="row">
+                                    <div className="col-sm-5 flex">
+                                        <img src={MTALogo} className="img-logo-discord" alt="discord mta logo" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div className="line-in-discord"></div>
+                                    </div>
+                                    <div className="col-sm-7">
+                                        <h1 className="text-white">Minecraft Technical Ask</h1>
+                                        <hr/>
+                                        <p className="text-white">Join our discord now</p>
+                                    </div>
+                                    <br/>
+                                    <p className="text-white">
+                                        พื้นที่นี้ จะเป็นพื้นที่สำหรับการสอบถามเรื่องของการเปิดเซิฟมายคราฟในรูปแบบต่างๆ เช่นการเปิดแบบธรรมดา หรือ การเปิดแบบ Cross-Platform
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="col-sm-6">
+                                <iframe src="https://discord.com/widget?id=873030042412797972&theme=dark" className="discord-join-iframe" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
+                                <div className="suggest-discord">
+                                    <p>เข้าร่วมเลย โดยการกดตรงนี้!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {/* <br />
+                    <a className="btn btn-primary joinbtn" href="https://www.youtube.com/c/AirwavyIT?sub_confirmation=1" target="blank">Subscribe</a>
+                    <br />
+                    <a href="/eiei" className="subscript">THIS LINK IS DIRECT TO www.youtube.com/c/AirwavyIT?sub_confirmation=1</a> */}
+                    <br /><br /><br /><br />
+                </div>
+            </div>
+
             {/* Post Viewer */}
             <div className="postview">
                 <div className="container">
@@ -228,14 +275,14 @@ const Home = () => {
                                 </div>
                             </div>
                             <br />
-                            
+
                         </div>
                         <br /><br />
                     </div>
                 </section>
 
                 <section className="aboutSec">
-                    <br/><br/>
+                    <br /><br />
                     <div className="container">
                         <About2 />
                         <br /><br />
@@ -292,6 +339,7 @@ const Home = () => {
             </div>
 
             {/* <%- include('footer') %> */}
+
         </div>
     );
 }
