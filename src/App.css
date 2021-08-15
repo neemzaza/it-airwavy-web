@@ -4,10 +4,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); /* Pacifico Font */
 
+@keyframes bganime {
+    from {
+        background-position: 0;
+    } to {
+        background-position: 0 1500px;
+    }
+}
     /* Welcome Picture URL */
     .welcome {
         background: url('img/Moon.png'); /* joinbg.jpg */
-        /* background-position: -1500px -500px; */
+        animation: bganime 540s infinite linear;
     }
     .twocongrat {
         background: linear-gradient(rgb(255, 255, 255), rgb(104, 104, 104));
@@ -45,7 +52,7 @@
         background: rgb(24, 25, 26);
         overflow-x: hidden;
     }
-    @media screen and (max-width: 641px) {
+    @media screen and (max-width: 847px) {
         .active {
             border-bottom-right-radius: 18px;
             border-top-right-radius: 18px;
@@ -286,6 +293,12 @@
     .devmenu {
         transition: all .3s;
     }
+    .discordmenu {
+        transition: all .3s;
+        background: -webkit-linear-gradient(rgb(128, 73, 255), rgb(24, 163, 255));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
     .home:hover {
         background: repeating-linear-gradient(grey, rgb(48, 145, 255));
         -webkit-background-clip: text;
@@ -301,6 +314,9 @@
         background: -webkit-linear-gradient(rgb(0, 77, 90), rgb(0, 153, 255));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+    .discordmenu:hover {
+        filter: grayscale(0.5);
     }
 
     .whenhover {
@@ -370,7 +386,7 @@
         border-radius: 18px;
         backdrop-filter: blur(7px);
     }
-    @media screen and (min-width: 642px) {
+    @media screen and (min-width: 847px) {
         .navbar-toggler-iconn {
             display: none;
         }
@@ -389,7 +405,7 @@
         }   
     }
 
-    @media screen and (max-width: 642px) {
+    @media screen and (max-width: 847px) {
         .centerPos {
             margin-left: 17%;
         }

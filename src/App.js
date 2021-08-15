@@ -27,7 +27,7 @@ const App = () => {
                 {/* Body */}
                 <Switch>
                     <Route path="/" exact={true}>
-                        <HomePage />
+                        <Home />
                         <Footer /> 
                     </Route>
 
@@ -59,15 +59,6 @@ const App = () => {
             </Router>
         );
     }
-
-
-function HomePage() {
-    return (
-        <>
-            <Home />
-        </>
-    )
-}
 
 // JavaScript Zone
 function JS() {

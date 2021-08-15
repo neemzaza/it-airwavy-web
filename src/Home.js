@@ -152,7 +152,7 @@ const Home = () => {
             </div>
 
             {/* Join Discord Viewer */}
-            <div className="joindiscord">
+            <div className="joindiscord" id="discord">
                 <div className="container p-5">
                     <div className="card blurbg container pt-3">
                         <div className="glow">

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import './App.css'
-// import './JS'
 import Logo from './img/NewLogo2021.png'
 import DevLogo from './img/airwavydevnew.png'
 import $ from 'jquery'
@@ -40,6 +39,8 @@ export default function Navbar() {
                             <NavLink className="devmenu nav-link normal whenhover" aria-current="page" to="/dev"><><img src={DevLogo} width="25"/>&nbsp;AIRWAVY DEVELOPER</></NavLink>
                             <div className="linew"></div>
 
+                            <a className="discordmenu nav-link normal whenhover" aria-current="page" href="#discord"><i className="bi bi-discord" />&nbsp;เข้า Discord ของผม</a>
+
                         </div>
                     </div>
                 </div>
@@ -54,6 +55,3 @@ export default function Navbar() {
     )
 }
 
-function JS() {
-    <JS />
-}
