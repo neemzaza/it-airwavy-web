@@ -39,7 +39,7 @@ export default function Navbar() {
                             <NavLink className="devmenu nav-link normal whenhover" aria-current="page" to="/dev"><><img src={DevLogo} width="25"/>&nbsp;AIRWAVY DEVELOPER</></NavLink>
                             <div className="linew"></div>
 
-                            <a className="discordmenu nav-link normal whenhover" aria-current="page" href="#discord"><i className="bi bi-discord" />&nbsp;เข้า Discord ของผม</a>
+                            <a className="discordmenu nav-link normal whenhover" aria-current="page" href="/#discord"><i className="bi bi-discord" />&nbsp;เข้า Discord ของผม</a>
 
                         </div>
                     </div>
