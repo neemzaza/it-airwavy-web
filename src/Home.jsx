@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import YouTubeSubscribe from './downloads/YouTubeSub'
 import $ from 'jquery'
 import axios from 'axios'
+import getSubscriber, { totalSubMan, subCountShorts } from './YTSubCount'
 
 // Include Img Zone
 import GameLogo from './img/gamewalogo.png'
@@ -14,10 +15,10 @@ import MTALogo from './img/MTALogo.png'
 // Include JSX Zone
 import About from './About'
 import About2 from './About2'
-import ExVideo from './ExVideo'
+import ExVideo from './ExVideo.jsx'
 
 const Home = () => {
-    const [subCount, setSubCount] = useState(0)
+    const [subCount, setSubCount] = useState("")
     const [totalSub, setTotalSub] = useState(0)
 
     useEffect(() => {
@@ -40,9 +41,9 @@ const Home = () => {
     }, [])
 
     useEffect(() => {
-        if (totalSub >= 2000) setSubCount(2000)
-        else if (totalSub >= 3000) setSubCount(3000)
-        else if (totalSub >= 5000) setSubCount(5000)
+        if (totalSub >= 2000) setSubCount("2000")
+        else if (totalSub >= 3000) setSubCount("3000")
+        else if (totalSub >= 5000) setSubCount("5000")
         else if (totalSub >= 10000) setSubCount("10K")
         else if (totalSub >= 60000) setSubCount("60K")
         else if (totalSub >= 100000) setSubCount("100K")
@@ -50,6 +51,12 @@ const Home = () => {
         else if (totalSub >= 1000000) setSubCount("1M")
         else if (totalSub >= 10000000) setSubCount("10M")
     }, [totalSub])
+
+    // useEffect(() => {
+    //     setTotalSub(getSubscriber())
+    // }, [])
+
+    
 
     $(document).on('scroll', () => {
         if ($("#spy").offset().top >= $("#boxsub").position().top) { //On BoxSub
@@ -116,7 +123,7 @@ const Home = () => {
         }
     })
     return (
-        <div>
+        <div id="mainPage">
             {/* <!-- This is NavBar!! --> */}
             <nav className="airwavyzone navbar navbar-expand-sm navbar-light fixed-top bg-light hider animate__animated">
                 <div className="container-fluid">

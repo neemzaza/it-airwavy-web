@@ -4,14 +4,14 @@ import Logo from './img/NewLogo2021.png'
 var upScroll = window.pageYOffset
 
 $(document).on('scroll', function () {
-    var downScroll = window.pageYOffset
+    const downScroll = window.pageYOffset
     if (upScroll > downScroll) {
-        console.log("worked!")
+        // console.log("worked!")
     } else {
         $("#textinner").addClass("animate__bounceIn")
         $("#textinner").removeClass("animate__bounceOut")
         $("#textinner").html("<img src='" + Logo + "' width='30' />")
-        console.log("down worked!")
+        // console.log("down worked!")
     }
 
     if ($("#spy").offset().top >= 350) {
@@ -23,7 +23,7 @@ $(document).on('scroll', function () {
         $("#timeb2").removeClass("animate__fadeOutDown")
         $("#timeb2").addClass("animate__fadeInUp")
         // $("#timeb2").addClass("animate__delay-1s")
-        console.log("hidden!!")
+        // console.log("hidden!!")
         // if ($("#spy").offset().top >= $("#hereshow").position().top) {
         //     $("#navbar").css("top", "0px")
         // } else {
@@ -58,42 +58,42 @@ $(document).on('scroll', function () {
     upScroll = downScroll
 
     //progress of page end
-    for (let i = 0; i <= ($("#spy").offset().top / $(document).height()) * 130; i++) {
+    for (let i = 0; i <= ($("#spy").offset().top / $("#mainPage").height()) * 100; i++) {
         $(".progressbar").css("width", i + "%")
         // console.log(i)
     }
 
 })
 
-if (document.URL.includes("/")) {
-    $(".home").removeClass("normal")
-    $(".home").addClass("active")
-    $(".comm").addClass("normal")
-    $(".devmenu").addClass("normal")
+// if (document.URL.includes("/")) {
+//     $(".home").removeClass("normal")
+//     $(".home").addClass("active")
+//     $(".comm").addClass("normal")
+//     $(".devmenu").addClass("normal")
 
-    $(".comm").removeClass("active")
-    $(".devmenu").removeClass("active")
+//     $(".comm").removeClass("active")
+//     $(".devmenu").removeClass("active")
 
-    // Section 2 (Active NavBar in Main Page)
-}
+//     // Section 2 (Active NavBar in Main Page)
+// }
 
-else if (document.URL.includes("/comm")) {
-    $(".home").addClass("normal")
-    $(".home").removeClass("active")
-    $(".devmenu").removeClass("active")
-    $(".comm").removeClass("normal")
+// else if (document.URL.includes("/comm")) {
+//     $(".home").addClass("normal")
+//     $(".home").removeClass("active")
+//     $(".devmenu").removeClass("active")
+//     $(".comm").removeClass("normal")
 
-    $(".comm").addClass("active")
-}
+//     $(".comm").addClass("active")
+// }
 
-else if (document.URL.includes("/dev")) {
-    $(".home").addClass("normal")
-    $(".home").removeClass("active")
-    $(".devmenu").removeClass("normal")
-    $(".comm").removeClass("active")
+// else if (document.URL.includes("/dev")) {
+//     $(".home").addClass("normal")
+//     $(".home").removeClass("active")
+//     $(".devmenu").removeClass("normal")
+//     $(".comm").removeClass("active")
 
-    $(".devmenu").addClass("active")
-}
+//     $(".devmenu").addClass("active")
+// }
 
 $("#navtoggler").on('click', () => {
     $("body").toggleClass("activebody")

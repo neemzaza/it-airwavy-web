@@ -2,17 +2,18 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './JS'
-import Navbar from './Navbar'
-import Home from './Home'
-import Footer from './Footer'
+import Navbar from './Navbar.jsx'
+import Home from './Home.jsx'
+import Footer from './Footer.jsx'
 
-import Comm from './Comm'
-import Dev from './Dev'
-import Eiei from './Eiei'
-import NotFound from './NotFound'
+import Comm from './Comm.jsx'
+import Dev from './Dev.jsx'
+import Eiei from './Eiei.jsx'
+import Pop from './Pop'
+import NotFound from './NotFound.jsx'
 
 //WIP Page
-import WIP from './WIP'
+import WIP from './WIP.jsx'
 
 const commPageFinish = false
 
@@ -50,6 +51,10 @@ const App = () => {
                     <Route path="/eiei">
                         <Eiei />
                         <Footer /> 
+                    </Route>
+
+                    <Route path="/pop">
+                        <Pop />
                     </Route>
 
                     <Route component={NotFoundPage}>

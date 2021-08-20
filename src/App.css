@@ -578,3 +578,11 @@
         box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
         border-radius: 12px;
     }
+    .pluem {
+        background: url('./img/3emdis.png');
+        background-size: 45rem;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh;
+    }
