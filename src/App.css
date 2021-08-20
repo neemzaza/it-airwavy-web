@@ -580,9 +580,17 @@
     }
     .pluem {
         background: url('./img/3emdis.png');
-        background-size: 45rem;
+        background-size: 30rem;
         background-position: center center;
         background-repeat: no-repeat;
         width: 100vw;
         height: 100vh;
+    }
+
+    .mainPage.popPluem {
+        overflow: hidden;
+    }
+
+    .stroketext {
+        -webkit-text-stroke-color: #000;
     }
