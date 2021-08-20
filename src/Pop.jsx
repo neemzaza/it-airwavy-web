@@ -29,7 +29,7 @@ export default function Pop() {
         })
 
         axios.post('http://localhost:5000/pop', { clickTime: clickTime, team: "Airwavy" }, (res) => {
-            
+
         })
 
         // getCookie()
@@ -48,7 +48,7 @@ export default function Pop() {
     }
     return (
         <div className="">
-            <div className="pluem" id="pluem" onMouseDown={() => click()} onMouseUp={() => notClick()}>
+            <div className="pluem" id="pluem" onKeyDown={() => click()} onKeyUp={() => notClick()} onMouseDown={() => click()} onMouseUp={() => notClick()}>
                 <center>
                     <br/><br/><br/><br/>
                     <h1 className="text-white bigprime">PopPluem</h1>
