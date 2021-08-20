@@ -30,7 +30,7 @@ export default function Pop() {
             "height": "100vh",
         })
 
-        axios.post('http://localhost:5000/pop', { clickTime: 1, team: "Airwavy" }).then(res => {
+        axios.post('https://it-airwavy-server-1.herokuapp.com/pop', { clickTime: 1, team: "Airwavy" }).then(res => {
             console.log(res)
         }).catch(err => {
             console.log(err)
@@ -52,13 +52,13 @@ export default function Pop() {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:5000/').then(res => {
+        axios.get('https://it-airwavy-server-1.herokuapp.com/').then(res => {
             setTotalClick(res.data)
         })
     }, [])
 
     setTimeout(() => {
-        axios.get('http://localhost:5000/').then(res => {
+        axios.get('https://it-airwavy-server-1.herokuapp.com/').then(res => {
             setTotalClick(res.data)
         })
     }, 15000);  
