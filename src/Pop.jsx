@@ -66,7 +66,7 @@ export default function Pop() {
         <div className="mainPage popPluem" tabIndex="0" onKeyDown={() => click()} onKeyUp={() => notClick()}>
             <div className="pluem" id="pluem" tabIndex="0" onTouchStart={() => click()} onMouseDown={() => click()} onMouseUp={() => notClick()}>
                 <center>
-                    <br/><br/><center><p className="text-white">การคลิกของคนทั้งหมด : {totalClick} (ค่าจะอัปเดตทุกๆ 15 วินาที)</p></center><br/>
+                    <br/><br/><center><p className="text-white">การคลิ๊กของคนทั้งหมด : {totalClick} (ค่าจะอัปเดตทุกๆ 15 วินาที)</p></center><br/>
                     <h1 className="text-white bigprime stroketext">PopPluem</h1>
                     <h1 className="text-white">{clickTime}</h1>
                 </center>
