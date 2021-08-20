@@ -48,7 +48,7 @@ export default function Pop() {
     }
     return (
         <div className="">
-            <div className="pluem" id="pluem" onKeyDown={() => click()} onKeyUp={() => notClick()} onMouseDown={() => click()} onMouseUp={() => notClick()}>
+            <div className="pluem" id="pluem" tabIndex="0" onKeyDown={() => click()} onKeyUp={() => notClick()} onMouseDown={() => click()} onMouseUp={() => notClick()}>
                 <center>
                     <br/><br/><br/><br/>
                     <h1 className="text-white bigprime">PopPluem</h1>
