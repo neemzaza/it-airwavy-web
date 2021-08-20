@@ -4,8 +4,12 @@ import $ from 'jquery';
 import defaultEmpop from './img/3emdis.png'
 import Empop from './img/3empop.png'
 
+import useSound from 'use-sound'
+import playPop from './sound/pop.m4a'
+
 export default function Pop() {
     $("body").css("overflow", "hidden")
+    const [playEffect] = useSound(playPop)
     const getCookie = () => {
         let HelloWorld = document.cookie.split('clickTime=');
         let getNum = HelloWorld[1]
@@ -29,6 +33,7 @@ export default function Pop() {
             "width": "100vw",
             "height": "100vh",
         })
+        playEffect()
 
         axios.post('https://it-airwavy-server-1.herokuapp.com/pop', { clickTime: 1, team: "Airwavy" }).then(res => {
             console.log(res)
