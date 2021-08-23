@@ -160,34 +160,24 @@ const Home = () => {
 
             {/* Join Discord Viewer */}
             <div className="joindiscord" id="discord">
-                <div className="container p-5">
-                    <div className="card blurbg container pt-3">
+                <div className="container p-3">
+                    <div className="card blurbg p-3 pt-5">
                         <div className="glow">
 
                             <div className="row">
-                                <div className="col-sm-6">
-                                    <div className="cardwow"><h1 className="twocongrat"><i class="bi bi-discord"></i> Join our discord</h1></div>
+                                <div className="col-sm-6 firstsec">
+                                    <h1 className="twocongrat"><i class="bi bi-discord"></i> Join our discord</h1>
                                     <br />
-
-                                    <div className="row">
-                                        <div className="col-sm-5 flex">
-                                            <img src={MTALogo} className="img-logo-discord" alt="discord mta logo" />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <div className="line-in-discord"></div>
-                                        </div>
-                                        <div className="col-sm-7">
-                                            <h1 className="text-white">Minecraft Technical Ask</h1>
+                                            <h1>Minecraft Technical Ask</h1>
                                             <hr />
-                                            <p className="text-white">Join our discord now</p>
-                                        </div>
+                                            <p>Join our discord now</p>
                                         <br />
-                                        <p className="text-white">
+                                        <p>
                                             พื้นที่นี้ จะเป็นพื้นที่สำหรับการสอบถามเรื่องของการเปิดเซิฟมายคราฟในรูปแบบต่างๆ เช่นการเปิดแบบธรรมดา หรือ การเปิดแบบ Cross-Platform
                                         </p>
-                                    </div>
                                 </div>
 
-                                <div className="col-sm-6">
+                                <div className="col-sm-6 secondsec">
                                     <iframe src="https://discord.com/widget?id=873030042412797972&theme=dark" className="discord-join-iframe" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
                                     <div className="suggest-discord">
@@ -201,7 +191,7 @@ const Home = () => {
                     <a className="btn btn-primary joinbtn" href="https://www.youtube.com/c/AirwavyIT?sub_confirmation=1" target="blank">Subscribe</a>
                     <br />
                     <a href="/eiei" className="subscript">THIS LINK IS DIRECT TO www.youtube.com/c/AirwavyIT?sub_confirmation=1</a> */}
-                        <br /><br /><br /><br />
+                        <br /><br />
                     </div>
                 </div>
             </div>
@@ -210,7 +200,7 @@ const Home = () => {
             <div className="postview">
                 <div className="container">
                     <br /><br />
-                    <h2 className="text-white">มีโพสต์ต่างๆ เกี่ยวกับสาระ IT มากมาย</h2>
+                    <h2>มีโพสต์ต่างๆ เกี่ยวกับสาระ IT มากมาย</h2>
                     <hr />
                     <div className="row">
                         <div className="col-sm-6">
@@ -252,7 +242,7 @@ const Home = () => {
                         </div>
                         {/* Subscribe Message */}
                         <div className="col-md-4 wowdes inhider">
-                            <h3 className="text-white">กดติดตามเพื่อได้รับเทคนิค IT ต่างๆ มากมายที่เราจะมีให้!
+                            <h3>กดติดตามเพื่อได้รับเทคนิค IT ต่างๆ มากมายที่เราจะมีให้!
                                 และกดกระดิ่งเพื่อได้รับการแจ้งเตือนอย่างไม่ขาดสายด้วยเด้อ!!</h3>
                         </div>
                         {/* ที่ว่าง */}

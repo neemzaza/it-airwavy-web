@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import './App.scss'
 import WIPLoading from './img/WIPLoading.gif'
 
 export default function WIP() {
@@ -15,9 +15,9 @@ export default function WIP() {
                 <div className="col-sm-6">
                     <div className="container">
                     <br/><br/>
-                <h1 className="text-light">หน้านี้กำลังพัฒนาอยู่...</h1>
+                <h1>หน้านี้กำลังพัฒนาอยู่...</h1>
                 <hr className="notEffect"/>
-                    <h5 className="text-light">โปรดรอ อาจใช้เวลาหลายวัน...</h5>
+                    <h5>โปรดรอ อาจใช้เวลาหลายวัน...</h5>
                     <br/>
                     <a className="btn btn-outline-light" href="/"><i className="bi bi-arrow-left-circle"></i>  กลับไปยังหน้าแนะนำตัว</a>
                     </div>

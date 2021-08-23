@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import './App.css'
+import './App.scss'
+import './Light.scss'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './JS'
 import Navbar from './Navbar.jsx'

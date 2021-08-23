@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import './App.css'
+import './App.scss'
 import Logo from './img/NewLogo2021.png'
 import DevLogo from './img/airwavydevnew.png'
 import $ from 'jquery'

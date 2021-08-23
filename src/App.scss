@@ -4,6 +4,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); /* Pacifico Font */
 
+#outload {
+    background: rgb(20, 20, 20);
+    color: #fff !important;
+}
+
 @keyframes bganime {
     from {
         background-position: 0;
@@ -114,8 +119,10 @@
     .primarytheme {
         color: var(--primaryThemeColor);
     }
-    .glow h1,h2,h3,h5{
-        filter: drop-shadow(0px 2px 3px);
+    .glow {
+        h1,h2,h3,h5{
+            filter: drop-shadow(0px 2px 3px);
+        }
     }
     .logonav {
         width: 30px;
@@ -129,13 +136,14 @@
         overflow-y: hidden;
     }
     .parallaxbg {
-        background: linear-gradient(#2b2b2b, #5b5b5b);
+        background: linear-gradient(#181818, #252525);
         /* background-image: url('/reactbeta/public/img/nextex.png'); */
         background-attachment: fixed;
         background-size: 500px;
     }
     .postview {
         background: url('img/postbg.jpg');
+        color: #fff;
         image-rendering: auto;
         image-rendering: crisp-edges;
         image-rendering: pixelated;
@@ -225,17 +233,19 @@
     .navfooter {
         background: #474747;
     }
-    .navfooter .normal {
-        padding: 10px;
-    }
+    .navfooter {
+        .normal {
+            padding: 10px;
+        }
 
-    .navfooter .active {
-        border-right: 6px solid rgb(0, 153, 255);
-        background: #383838;
-        text-align: left;
-        border-radius: 18px 0px 0px 18px;
-        max-width: 100%;
-        width: auto;
+        .active {
+            border-right: 6px solid rgb(0, 153, 255);
+            background: #383838;
+            text-align: left;
+            border-radius: 18px 0px 0px 18px;
+            max-width: 100%;
+            width: auto;
+        }
     }
 
     .righticon {
@@ -395,13 +405,10 @@
         }
         .active {
             color:rgb(0, 132, 255) !important;
-            /* filter: drop-shadow(0px 1px 0.5px); */
             transition: 0.7s;
-            background: #424242;
+            background: #42424285;
             border-radius: 18px;
             text-decoration: none;
-            /* padding: 8px; */
-            /* padding: 4px; */
         }   
     }
 
@@ -497,6 +504,7 @@
 
     .mainpageloading {
         margin-top: 12%;
+        color: #fff;
     }
 
     .rewardFont {
@@ -510,28 +518,35 @@
         border-radius: 18px;
         box-shadow: 0px 2px 6px rgba(0,0,0,0.4);
     }
+    .aboutSec {
+        color: #fff;
+    }
 
     .historyZone {
         background: #fff;
     }
 
     .joindiscord {
-        background: url('img/joindiscord.jpg');
+        // background: url('img/joindiscord.jpg');
         background-size: 90rem;
-    }
-/* 
-    .joindiscord .card.blurbg {
-        height: 40rem;
-    } */
 
+        .firstsec {
+            text-align: right;
+            color: white;
+        }
+
+        .secondsec {
+            text-align: center;
+        }
+
+        .cardwow {
+            border-radius: 12px;
+        }
+    }
     .card.blurbg {
         background: rgba(0, 0, 0, 0.5);
         border-radius: 18px;
         backdrop-filter: blur(7px);
-    }
-    
-    .joindiscord .cardwow {
-        border-radius: 12px;
     }
 
     .img-logo-discord {
@@ -556,6 +571,7 @@
         position: relative;
         top: 10px;
         animation: suggest-discord 2s infinite;
+        left: 10vw;
     }
 
     @keyframes suggest-discord {
