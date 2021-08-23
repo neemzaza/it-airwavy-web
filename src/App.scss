@@ -476,7 +476,12 @@
     }
 
     .nondeco {
-        text-decoration: none; color:black
+        text-decoration: none; 
+        color:black;
+    }
+    
+    .airwavylogoinfooter:before {
+        content: "🌚 You are using Dark Mode";
     }
 
     .progressbar {

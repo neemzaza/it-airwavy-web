@@ -13,7 +13,7 @@
         from {
             background-position: -450px;
         } to {
-            background-position: -450px 1500px;
+            background-position: -450px 4px;
         }
     }
         /* Welcome Picture URL */
@@ -482,6 +482,10 @@
     
         .nondeco {
             text-decoration: none; color:black
+        }
+
+        .airwavylogoinfooter:before {
+            content: "🌤 You are using Light Mode";
         }
     
         .progressbar {
