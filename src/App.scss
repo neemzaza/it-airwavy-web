@@ -607,11 +607,69 @@
         background-repeat: no-repeat;
         width: 100vw;
         height: 100vh;
+        
+        #myScore {
+            transition: all 0.2s;
+        }
     }
+
+    @media screen and (max-width: 847px){
+        .pluem {
+            background: url('./img/3emdis.png');
+            background-size: 20rem;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            
+            #myScore {
+                transition: all 0.2s;
+            }
+        }
+    }
+
 
     .mainPage.popPluem {
         overflow: hidden;
         color: #fff;
+
+        .sidebar {
+            background: rgb(53, 53, 53);
+            position: fixed;
+            height: 100vh;
+            width: 10rem;
+            border-radius: 0px 10px 3px 0px;
+            text-align: right;
+            transition: all .4s;
+            cursor: pointer;
+
+            .totalScore {
+                background: rgb(75, 75, 75);
+                padding: 1rem 0 0 0.5rem;
+                border-radius: 18px;
+            }   
+
+            .bottomMsg {
+                position: absolute;
+                top: 82vh;
+                transform: translate(0.2%, -50%);
+                color: #b1b1b1;
+            }
+            
+        }
+        .sidebar.on-zoom {
+            width: 25rem;
+
+            .title::before {
+                content: "Leaderboard - "
+            }
+            .all-score::before {
+                content: "คะแนนรวมของการกด"
+            }
+            #score {
+                transition: all .7s;
+            }
+        }
     }
 
     .stroketext {
