@@ -68,9 +68,16 @@ export default function Pop() {
       height: "100vh",
     });
   };
-
+  let iconToggle = false
   const toggleSidebar = () => {
+    iconToggle = !iconToggle
     $("#sidebar").toggleClass("on-zoom");
+
+    if (iconToggle) {
+      $("#toggleBtn").text("<");
+    } else {
+      $("#toggleBtn").text(">");
+    }
   };
 
   // useEffect(() => {
@@ -88,12 +95,12 @@ export default function Pop() {
 
   useEffect(() => {
     axios.get("https://it-airwavy-server-1.herokuapp.com/").then((res) => {
-      setTotalClick(res.data[0].clicked)
+      setTotalClick(res.data[0].clicked);
 
-      console.log(totalClick)
+      console.log(totalClick);
     });
   }, []);
-  
+
   setTimeout(() => {
     axios.get("https://it-airwavy-server-1.herokuapp.com/").then((res) => {
       setTotalClick(res.data[0].clicked); // 0 + 0 + 1 + 1 + 1 + 1 + 0 + 1 + 0 + 0 => 5
@@ -123,22 +130,25 @@ export default function Pop() {
         onClick={() => toggleSidebar()}
       >
         <div className="container">
-          <a class="btn btn-light btn-sm " href="#" role="button">
+          <a
+            class="btn btn-light btn-sm "
+            href="#"
+            id="toggleBtn"
+            role="button"
+          >
             {">"}
           </a>
           <div className="flex">
             <h3 className="title">ลำดับ 🏆</h3>
           </div>
           <div className="totalScore">
-              <div className="flex">
-                <p className="all-score">ทั้งหมด :</p>&nbsp;&nbsp;
-                <p id="score" className="animate__animated">
-                  {totalClick}
-                </p>
-              </div>
+            <div className="flex">
+              <p className="all-score">ทั้งหมด :</p>&nbsp;&nbsp;
+              <p id="score" className="animate__animated">
+                {totalClick}
+              </p>
             </div>
-
-            
+          </div>
         </div>
 
         <div className="bottomMsg">

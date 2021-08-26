@@ -641,11 +641,15 @@
                 background: rgb(230, 230, 230);
                 position: fixed;
                 height: 100vh;
-                width: 10rem;
+                max-width: 12rem;
+                width: 100%;
                 border-radius: 0px 10px 3px 0px;
                 text-align: right;
                 transition: all .4s;
                 cursor: pointer;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                
     
                 .totalScore {
                     background: rgb(255, 255, 255);
@@ -656,7 +660,7 @@
                 
             }
             .sidebar.on-zoom {
-                width: 25rem;
+                max-width: 25rem;
     
                 .title::before {
                     content: "Leaderboard - "
@@ -666,6 +670,9 @@
                 }
                 #score {
                     transition: all .7s;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
                 }
             }
         }
