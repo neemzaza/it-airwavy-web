@@ -56,6 +56,25 @@ const Home = () => {
     //     setTotalSub(getSubscriber())
     // }, [])
 
+    const subscribeBox = () => {
+            const lightTheme = window.matchMedia("(prefers-color-scheme: light)")
+            if (lightTheme.matches) {
+                return <YouTubeSubscribe
+                channelid={"UCvBnJwjxKxJ4c4mOpzyX3Zg"}
+                theme={"default"}
+                layout={"full"}
+                count={"default"}
+                />
+            } else {
+                return <YouTubeSubscribe
+                channelid={"UCvBnJwjxKxJ4c4mOpzyX3Zg"}
+                theme={"dark"}
+                layout={"full"}
+                count={"default"}
+                />
+            }
+
+    }
     
 
     $(document).on('scroll', () => {
@@ -125,7 +144,7 @@ const Home = () => {
     return (
         <div id="mainPage">
             {/* <!-- This is NavBar!! --> */}
-            <nav className="airwavyzone navbar navbar-expand-sm navbar-light fixed-top bg-light hider animate__animated">
+            <nav className="airwavyzone navbar navbar-expand-sm navbar-light fixed-top hider animate__animated">
                 <div className="container-fluid">
                     {/* <a className="navbar-brand" href="#"></a> */}
 
@@ -230,13 +249,7 @@ const Home = () => {
 
                                                     <div className="g-ytsubscribe" data-channelid="UCvBnJwjxKxJ4c4mOpzyX3Zg" data-layout="full"
                                                         data-count="default"></div> */}
-
-                                <YouTubeSubscribe
-                                    channelid={"UCvBnJwjxKxJ4c4mOpzyX3Zg"}
-                                    theme={"default"}
-                                    layout={"full"}
-                                    count={"default"}
-                                />
+                                {subscribeBox()}
 
                             </div>
                         </div>
@@ -268,7 +281,7 @@ const Home = () => {
                                     <img className="aboutimg" src={oldAboutImg} alt="ภาพประกอบตอนคลิปเก่าๆ " /><br /><br /><br /><br />
                                 </div>
                                 <div className="col-sm-8">
-                                    <div className="righticon para animate__animated animate__fadeOut" id="para1">
+                                    <div className=" para animate__animated animate__fadeOut" id="para1">
                                         <About />
                                     </div>
                                 </div>

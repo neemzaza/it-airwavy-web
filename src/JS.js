@@ -10,7 +10,6 @@ $(document).on('scroll', function () {
     } else {
         $("#textinner").addClass("animate__bounceIn")
         $("#textinner").removeClass("animate__bounceOut")
-        $("#textinner").html("<img src='" + Logo + "' width='30' />")
         // console.log("down worked!")
     }
 
@@ -41,7 +40,6 @@ $(document).on('scroll', function () {
         $("#textinner").removeClass("animate__bounceIn")
         //$("#textinner").addClass("animate__bounceIn")
 
-        $("#textinner").html("<img src='" + Logo + "' width='30' />&nbsp;Airwavy")
     } else { // This is #spy > 1 but in 349
         $("#navbar").css("height", "51px")
         $("hr").css("width", "0%")

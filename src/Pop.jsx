@@ -169,7 +169,7 @@ export default function Pop() {
           <br />
           <br />
           <center>
-            <p className="text-white">
+            <p>
               การคลิ๊กของคนทั้งหมด : {} (ค่าจะอัปเดตทุกๆ 15 วินาที)
             </p>
           </center>

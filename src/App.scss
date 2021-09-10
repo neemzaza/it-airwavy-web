@@ -4,9 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); /* Pacifico Font */
 
-#outload {
+.loading-page {
     background: rgb(20, 20, 20);
-    color: #fff !important;
+    color: #fff;
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    padding-top: 50vh;
 }
 
 @keyframes bganime {
@@ -57,23 +62,83 @@
         background: rgb(24, 25, 26);
         overflow-x: hidden;
     }
-    @media screen and (max-width: 847px) {
+
+    @media screen and (min-width: 847px) { //Begin as 847px (> 847px)
+        .navbar-toggler-iconn {
+            display: none;
+        }
+        .mobileshow {
+            display: none;
+        }
         .active {
-            border-bottom-right-radius: 18px;
-            border-top-right-radius: 18px;
+            color:rgb(0, 132, 255) !important;
+            transition: 0.7s;
+            background: #505050c7;
+            border-radius: 18px;
+            text-decoration: none;
+        }   
+        menutext {
+            display: inline-flex !important;
+        }
+        
+    }
+    
+    @media screen and (max-width: 847px) { //End as 847px (0 - 847px)
+        .active {
+            border-radius: 18px;
             background: #424242;
             width: 80%;
         }   
+        .centerPos {
+            margin-left: 17%;
+        }
+        .bigprime {
+            font-size: 2.5rem;
+            word-wrap: break-word;
+        }
+        
+        .pluem {
+            background: url('./img/3emdis.png');
+            background-size: 20rem;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            
+            #myScore {
+                transition: all 0.2s;
+            }
+        }
     }
 
-    @media screen and (min-width: 575px) {
+    @media screen and (min-width: 575px) { // Begin as 575px (> 575px)
         .brwow {
             display: none;
         }
+
+        .navbar-toggler-iconn {
+            display: none;
+        }
+        .mobileshow {
+            display: none;
+        } 
+        menutext {
+            display: none;
+        }
     }
+
+    @media screen and (max-width: 575px){ //End as 575px (0 - 575px)
+        .active {
+            border-radius: 0px 18px 18px 0px;
+            background: #424242;
+            width: 80%;
+        }   
+        
+    }
+    
     .escsub .active {
         background: none;
-        filter: drop-shadow(0px 2px 6px rgba(0, 110, 255, 0.4));
+        filter: drop-shadow(0px 2px 6px var(--primaryThemeColor));
     }
     #gamemenu.active {
         color: var(--gamePrimaryThemeColor) !important;
@@ -168,7 +233,7 @@
     }
     .boxsub {
         max-width: 300px;
-        background: #fff;
+        background: rgb(19, 19, 19);
         border-radius: 10px;
     }
     #boxsub {
@@ -203,7 +268,7 @@
     .airwavyzone {
         height: 64px;
         transition: 0.4s;
-
+        background: rgb(29, 29, 29);
     }
 
     .footer {
@@ -396,31 +461,7 @@
         border-radius: 18px;
         backdrop-filter: blur(7px);
     }
-    @media screen and (min-width: 847px) {
-        .navbar-toggler-iconn {
-            display: none;
-        }
-        .mobileshow {
-            display: none;
-        }
-        .active {
-            color:rgb(0, 132, 255) !important;
-            transition: 0.7s;
-            background: #42424285;
-            border-radius: 18px;
-            text-decoration: none;
-        }   
-    }
-
-    @media screen and (max-width: 847px) {
-        .centerPos {
-            margin-left: 17%;
-        }
-        .bigprime {
-            font-size: 2.5rem;
-            word-wrap: break-word;
-        }
-    }
+    
     .activebrand {
         writing-mode: vertical-rl;
     }
@@ -477,11 +518,40 @@
 
     .nondeco {
         text-decoration: none; 
-        color:black;
+        color:rgb(255, 255, 255);
     }
     
     .airwavylogoinfooter:before {
         content: "🌚 You are using Dark Mode";
+    }
+    .btn-switch-light-and-dark {
+        display: inline-flex;
+        overflow: hidden;
+        transition: .4s;
+        .toggle-theme {
+            opacity: 0;
+        }
+    }
+    .btn-switch-light-and-dark-on {
+        
+        width: 6rem;
+
+        .toggle-theme {
+            opacity: 1;
+            font-size: 1.4rem;
+            padding-left: 0.7em;
+            padding-top: 0.25em;
+            color: #000;
+        }
+
+        .icon-dark {
+            color: #fff !important;
+            filter: drop-shadow(0px 2px 3px);
+        }
+        .icon-light {
+            color: #000 !important;
+            filter: none;
+        }
     }
 
     .progressbar {
@@ -612,22 +682,6 @@
             transition: all 0.2s;
         }
     }
-
-    @media screen and (max-width: 847px){
-        .pluem {
-            background: url('./img/3emdis.png');
-            background-size: 20rem;
-            background-position: center center;
-            background-repeat: no-repeat;
-            width: 100vw;
-            height: 100vh;
-            
-            #myScore {
-                transition: all 0.2s;
-            }
-        }
-    }
-
 
     .mainPage.popPluem {
         overflow: hidden;

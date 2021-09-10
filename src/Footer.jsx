@@ -49,7 +49,7 @@ export default function Footer() {
                     </div>
                     <hr />
                     <div className="righticon">
-                        <a href="#" className="nondeco airwavylogoinfooter text-white"><img src={Logo} width="40" alt="Airwavy's Logo"/>&nbsp;AirwavyIT</a>
+                        <a href="#" className="nondeco airwavylogoinfooter"><img src={Logo} width="40" alt="Airwavy's Logo"/>&nbsp;AirwavyIT</a>
                     </div>
                     <br />
                     <br />

@@ -14,6 +14,10 @@ export default function Navbar() {
             $("#navbar").toggleClass("activemenu")
             $(".navbar-brand").toggleClass("activebrand")
         })
+
+        $("#btnSwitch").on('click', () => {
+            $("#btnSwitch").toggleClass("btn-switch-light-and-dark-on")
+        })
     })
     return (
         <>  
@@ -25,7 +29,7 @@ export default function Navbar() {
             </div>
             <nav className="navbar parallaxbg navbar-expand-sm navbar-dark" id="navbar">
                 <div className="container-fluid">
-                    <a id="textinner" className="navbar-brand animate__animated" href="#"><img className='logonav' src={Logo} width="30" />&nbsp;Airwavy</a>
+                    <a id="textinner" className="navbar-brand animate__animated" href="#"><img className='logonav' src={Logo} width="30" />&nbsp;Official</a>
                     <h6 className="text-white ontextload">Airwavy loading...</h6><noscript>&nbsp;<a className="btn btn-outline-danger btn-sm " href="#" role="button"><i className="bi bi-exclamation-octagon"></i>&nbsp;ERROR!</a></noscript>
                     
                     {/* toggle (icon mobile) */}
@@ -34,20 +38,17 @@ export default function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarID">
                         <div className="navbar-nav ms-auto">
 
-                            <NavLink className="home nav-link normal whenhover" aria-current="page" to="/" exact={true} ><><i className="bi bi-house-fill"></i>&nbsp;แนะนำตัว</></NavLink>
-                            <NavLink className="comm nav-link normal whenhover" aria-current="page" to="/comm"><><i className="bi bi-stickies-fill"></i>&nbsp;ชุมชน (สำรอง)</></NavLink>
-                            <NavLink className="devmenu nav-link normal whenhover" aria-current="page" to="/dev"><><img src={DevLogo} width="25"/>&nbsp;AIRWAVY DEVELOPER</></NavLink>
-                            <div className="linew"></div>
-
-                            <a className="discordmenu nav-link normal whenhover" aria-current="page" href="/#discord"><i className="bi bi-discord" />&nbsp;เข้า Discord ของผม</a>
-
+                            <NavLink className="home nav-link normal whenhover" aria-current="page" to="/" exact={true} ><><i className="bi bi-house-fill"></i><menutext>&nbsp;แนะนำตัว</menutext></></NavLink>
+                            <a className="discordmenu nav-link normal whenhover" aria-current="page" href="/#discord"><i className="bi bi-discord" /><menutext>&nbsp;เข้า Discord ของผม</menutext></a>
+                            <NavLink className="devmenu nav-link normal whenhover" aria-current="page" to="/dev"><><img src={DevLogo} width="25"/><menutext>&nbsp;AIRWAVY DEVELOPER</menutext></></NavLink>
+                            <div className="linew btn-switch-light-and-dark" id="btnSwitch" ><i class="bi bi-sun toggle-theme icon-light"></i><i class="bi bi-moon-fill toggle-theme icon-dark"></i></div>
                         </div>
                     </div>
                 </div>
                 <div className="mobileshow">
                     <br/><br/><br/>
                         <NavLink className="home nav-link normal" aria-current="page" to="/" exact={true}><b><i className="bi bi-house-fill"></i>&nbsp;แนะนำตัว</b></NavLink>
-                        <NavLink className="comm nav-link normal" aria-current="page" to="/comm"><b><i className="bi bi-stickies-fill"></i>&nbsp;ชุมชน (สำรอง)</b></NavLink>
+                        <a className="discordmenu nav-link normal" aria-current="page" to="/#discord"><i className="bi bi-discord" /><menutext>&nbsp;เข้า Discord ของผม</menutext></a>
                         <NavLink className="devmenu nav-link normal" aria-current="page" to="/coming-soon"><b><i className="bi bi-code-slash"></i>&nbsp;AIRWAVY DEVELOPER</b></NavLink>
                 </div>
             </nav>
