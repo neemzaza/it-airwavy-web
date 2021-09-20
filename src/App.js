@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import './App.scss'
-import './Light.scss'
+import './scss/App.scss'
+import './scss/Light.scss'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './JS'
 import $ from 'jquery'
@@ -14,6 +14,7 @@ import Comm from './Comm.jsx'
 import Dev from './Dev.jsx'
 import Eiei from './Eiei.jsx'
 import Pop from './Pop'
+
 import NotFound from './NotFound.jsx'
 
 //WIP Page
@@ -104,7 +105,9 @@ const App = () => {
 
                 <Route path="/dev">
                     <Dev />
-                    <Footer />
+                    <div className="can-scroll-on-hidden-overflow">
+                        <Footer />
+                    </div>
                 </Route>
 
                 <Route path="/eiei">

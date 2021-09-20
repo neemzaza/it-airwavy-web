@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.scss'
+// import './App.scss'
 import WIPLoading from './img/WIPLoading.gif'
 
 export default function WIP() {

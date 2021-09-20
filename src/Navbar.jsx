@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import './App.scss'
+// import './App.scss'
 import Logo from './img/NewLogo2021.png'
 import DevLogo from './img/airwavydevnew.png'
 import $ from 'jquery'
@@ -18,7 +18,7 @@ export default function Navbar() {
         $("#btnSwitch").on('click', () => {
             $("#btnSwitch").toggleClass("btn-switch-light-and-dark-on")
         })
-    })
+    }, [])
     return (
         <>  
             <nav className="navbar fixed-top navbar-expand-sm" id="spy">
