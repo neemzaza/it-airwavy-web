@@ -77,9 +77,9 @@ export default function Dev() {
     }
 
   useEffect(() => {
-    getArticles("https://raw.githubusercontent.com/neemzaza/AirwavyWeb/main/installation.md", setInstallDocument)
-    getArticles("https://raw.githubusercontent.com/neemzaza/AirwavyWeb/main/documention.md", setDocumention)
-    getArticles("https://raw.githubusercontent.com/neemzaza/AirwavyWeb/main/issue.md", setIssueDocument)
+    getArticles("https://raw.githubusercontent.com/neemzaza/AirwavyWeb/main/วิธีการติดตั้ง-plugin-tuwavyspeedrunner.md", setInstallDocument)
+    getArticles("https://raw.githubusercontent.com/neemzaza/AirwavyWeb/main/คู่มือการใช้-plugin-tuwavyspeedrunner.md", setDocumention)
+    getArticles("https://raw.githubusercontent.com/neemzaza/AirwavyWeb/main/ปัญหาของ-plugin-tuwavyspeedrunner.md", setIssueDocument)
     if ($("#spy").offset().top <= $("#learn-more").offset().top) {
         onGoToWelcome()
     } 

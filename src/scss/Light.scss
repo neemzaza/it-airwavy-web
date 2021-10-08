@@ -609,4 +609,103 @@
         -webkit-text-stroke-color: rgb(255, 255, 255);
         -webkit-text-stroke-width: 1px;
     }
+
+    .article {
+        border-radius: 1rem;
+        border: none;
+        color: rgb(26, 26, 26);
+    }
+
+    .post-article {
+        padding: 1rem;
+        border-radius: 1rem;
+        text-decoration: none;
+        color: rgb(26, 26, 26);
+        background: rgb(255, 255, 255);
+        transition: top .1s ease;
+        top: 0;
+    }
+
+    .post-article:hover {
+        top: -5px;
+    }
+
+    .post-article::after {
+        content: "";
+        position: absolute;
+        width: 1%;
+        height: 0.3rem;
+        background: rgb(26, 26, 26);
+        border-radius: 1rem;
+        top: 80%;
+        transition: .1s;
+    }
+
+    .post-article:hover::after {
+        content: "";
+        position: absolute;
+        width: 2%;
+        height: 0.3rem;
+        background: rgb(26, 26, 26);
+        border-radius: 1rem;
+        top: 80%;
+    }
+
+    .card.article {
+        background: rgb(255, 255, 255);
+    }
+
+    .loading {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        border-top:2px solid;
+        border-left:2px solid;
+        animation: .7s loading infinite;
+    }
+
+    @keyframes loading {
+        from {
+            transform: rotate(0deg);
+        } to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .card.skeleton {
+        .skeleton-extend {
+          background: linear-gradient(90deg, rgb(236, 236, 236) 0%, rgb(197, 197, 197) 50%, rgb(236, 236, 236) 100%);
+          animation: skeleton-loading 2s infinite;
+          background-position: 0%;
+        }
+        .skeleton-title {
+          @extend .skeleton-extend;
+          width: 50%;
+          height: 2rem;
+          border-radius: 0.5rem;
+        }
+      
+        .skeleton-content {
+          @extend .skeleton-extend;
+          width: 30rem;
+          height: 1rem;
+          border-radius: 0.3rem;
+        }
+      }
+
+      @keyframes skeleton-loading {
+        0% {
+          background-position: 0%;
+        } 50% {
+          background-position: 25rem;
+        } 100% {
+          background-position: 100%;
+        }
+      }
+
+      .other-article {
+          color: rgb(0, 0, 0);
+          
+      }
 }

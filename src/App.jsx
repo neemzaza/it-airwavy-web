@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import './scss/App.scss'
 import './scss/Light.scss'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import './JS'
 import $ from 'jquery'
 import axios from 'axios'
 
@@ -14,6 +13,8 @@ import Comm from './Comm.jsx'
 import Dev from './Dev.jsx'
 import Eiei from './Eiei.jsx'
 import Pop from './Pop'
+import Article from './Article'
+import PageArticle from './PageArticle'
 
 import NotFound from './NotFound.jsx'
 
@@ -32,6 +33,22 @@ const App = () => {
     const serverURL = "https://it-airwavy-server-1.herokuapp.com"
     const localURL = "http://localhost:5000"
     const [allMsg, setAllMsg] = useState([])
+    
+    const [allArticle, addArticle] = useState([])
+    
+    useEffect(() => {
+        axios.get("https://api.github.com/repos/neemzaza/AirwavyWeb/git/trees/main")
+        .then((res) => {
+            for (let i = 0; i < res.data.tree.length; i++) {
+                addArticle(allArticle => [...allArticle, res.data.tree[i]])
+            }
+            
+            // if (!allArticle) {
+            //     console.log("NO DATA")
+            // }
+            console.log(allArticle)
+        })
+    }, [])
 
 
     // let 
@@ -108,6 +125,15 @@ const App = () => {
                     <div className="can-scroll-on-hidden-overflow">
                         <Footer />
                     </div>
+                </Route>
+
+                <Route path="/articles">
+                    <Article />
+                    <Footer />
+                </Route>
+                <Route path="/article/:name/:code">
+                    <PageArticle />
+                    <Footer />
                 </Route>
 
                 <Route path="/eiei">
