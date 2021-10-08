@@ -7,7 +7,7 @@ import $ from "jquery";
 const Article = () => {
   const [allArticle, addArticle] = useState([]);
   const [pageNum, addPageNum] = useState(0);
-  const [limitNum, addLimitNum] = useState(10);
+  const [limitNum, addLimitNum] = useState(22);
   const [titleResult, setTitleResult] = useState([]);
   const addPageCount = 20;
 
