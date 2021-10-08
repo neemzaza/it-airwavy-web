@@ -4,6 +4,7 @@ import marked from "marked";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import $ from 'jquery'
+import DocumentMeta from "react-document-meta"
 
 const Pagearticle = () => {
   const { code, title, name } = useParams();
@@ -24,7 +25,7 @@ const Pagearticle = () => {
     await axios
       .get("https://api.github.com/repos/neemzaza/AirwavyWeb/git/trees/main")
       .then((res) => {
-        for (let i = 0; i < res.data.tree.length; i++) {
+        for (let i = 0; i < 2; i++) {
             if (res.data.tree[i].sha === code) continue;
           addArticle((allArticle) => [...allArticle, res.data.tree[i]]);
         }
@@ -36,12 +37,24 @@ const Pagearticle = () => {
       });
   };
 
+  const meta = {
+    title: name,
+    description: "นี่คือบทความของ Airwavy",
+    canonical: "https://it-airwavy.herokuapp.com/articles/",
+    meta: {
+        charset: "utf-8",
+        name: {
+            keywords: "server,การเปิดเซิฟ,ploudos"
+        }
+    }
+  };
+
   useEffect(() => {
     fetchArticle()
     getArticlesPost()
   }, []);
   return (
-    <div>
+    <DocumentMeta {...meta}>
       <br />
       <div className="container">
         <div className="card article p-3">
@@ -74,10 +87,12 @@ const Pagearticle = () => {
               <br />
             </div>
           ))}
+          <Link class="btn btn-primary btn-sm " to="/articles" role="button">ดูบทความทั้งหมด</Link>
             </div>
         </div>
+        <br/>
       </div>
-    </div>
+    </DocumentMeta>
   );
 };
 

@@ -632,23 +632,12 @@
 
     .post-article::after {
         content: "";
-        position: absolute;
-        width: 1%;
-        height: 0.3rem;
         background: rgb(26, 26, 26);
-        border-radius: 1rem;
-        top: 80%;
-        transition: .1s;
     }
 
     .post-article:hover::after {
         content: "";
-        position: absolute;
-        width: 2%;
-        height: 0.3rem;
         background: rgb(26, 26, 26);
-        border-radius: 1rem;
-        top: 80%;
     }
 
     .card.article {

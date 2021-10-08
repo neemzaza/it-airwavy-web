@@ -1056,22 +1056,23 @@
     .post-article::after {
         content: "";
         position: absolute;
-        width: 1%;
-        height: 0.3rem;
-        background: #fff;
-        border-radius: 1rem;
-        top: 80%;
-        transition: .1s;
-    }
-
-    .post-article:hover::after {
-        content: "";
-        position: absolute;
         width: 2%;
         height: 0.3rem;
         background: #fff;
         border-radius: 1rem;
         top: 80%;
+        transition: .1s;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .post-article:hover::after {
+        content: "";
+        position: absolute;
+        width: 3%;
+        height: 0.3rem;
+        background: #fff;
+        border-radius: 1rem;
     }
 
     .card.article {
@@ -1130,4 +1131,7 @@
       .other-article {
           color: #fff;
           
+          .btn {
+              margin-right: 1rem;
+          }
       }
