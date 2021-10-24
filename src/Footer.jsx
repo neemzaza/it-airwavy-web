@@ -14,7 +14,7 @@ export default function Footer() {
             <div className="follow" id="follow">
                 <div className="container">
                     <br />
-                    <h1><b>FOLLOW ME!&nbsp;<i className="icontada bi bi-chat-square-quote-fill animate__animated" id="icontada"></i></b></h1>
+                    <h1><b>FOLLOW ME ON!&nbsp;<i className="icontada bi bi-chat-square-quote-fill animate__animated" id="icontada"></i></b></h1>
                     <hr />
                     <div className="row">
                         <div className="col-sm-4"><a href="https://youtube.com/c/AirwavyIT"><i className="yt iconsize bi bi-youtube"></i></a></div>
@@ -29,12 +29,12 @@ export default function Footer() {
                 <div className="row">
                     <div className="col-sm-6">
                         <br />
-                        <h1 className="text-end"><b>INFO THIS WEB</b></h1>
-                        <p className="paratext">© 2020 - 2021 ลิขสิทธิ์โดย Airwavy (Sarut Ardnarong) สงวนลิขสิทธิ์</p>
-                        <p className="paratext"><i className="bi bi-vector-pen"></i>   ออกแบบหน้าเว็บและลูกเล่นโดย Airwavy (DesigNWavy version 3.1)</p>
+                        <h1 className="text-end"><b>WEB INFOMATION</b></h1>
+                        <p className="paratext">© 2020 - {new Date().getFullYear()} ลิขสิทธิ์โดย Airwavy (Sarut Ardnarong) สงวนลิขสิทธิ์</p>
+                        <p className="paratext"><i className="bi bi-vector-pen"></i>   ออกแบบหน้าเว็บและลูกเล่นโดย Airwavy (WhitEWavy version 4)</p>
                         <p className="paratext"><i className="bi bi-person-square"></i>   เจ้าของเว็บและผู้ถูกกล่าวถึงคือ Airwavy</p>
                         <br />
-                        <p className="paratextPurple"><i className="bi bi-hdd-network"></i>  โฮสติงน์เว็บโดย Heroku</p>
+                        <p className="paratextPurple"><i className="bi bi-hdd-network"></i>  โฮสติงน์เว็บโดย Netlify</p>
                         <br />
                         <br />
                     </div>

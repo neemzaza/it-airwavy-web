@@ -7,19 +7,10 @@
         color: rgb(3, 3, 3);
     }
 
-@keyframes bganime {
-    from {
-        background-position: 0;
-    } to {
-        background-position: 0 1500px;
-    }
-}
     /* Welcome Picture URL */
     .welcome {
-        background: url('../img/sun.png'); /* joinbg.jpg */
-        background-size: 100rem;
-        background-repeat: no-repeat;
-        animation: bganime 540s infinite linear;
+        // background: url('../img/sun.jpg'); /* joinbg.jpg */
+        background: linear-gradient(90deg, #fff, rgb(0, 162, 255));
     }
     .twocongrat {
         background: linear-gradient(rgb(255, 255, 255), rgb(104, 104, 104));
@@ -238,7 +229,7 @@
     }
     .paratextPurple {
         @extend .paratext;
-        border-left: 6px solid rgb(136, 31, 255);
+        border-left: 6px solid rgb(29, 255, 161);
     }
     .navfooter {
         background: #f0f0f0;

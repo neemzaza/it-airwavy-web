@@ -38,10 +38,10 @@ const Article = () => {
     <div>
       <div className="article pt-4">
         <div className="container">
-          <h1>All article - บทความทั้งหมด</h1>
+          <h1>Airwavy's Articles - บทความของ Airwavy</h1>
           <hr className="notEffect" />
           {/* <div className="loading"></div> */}
-          <p>LATEST ARTICLE - บทความล่าสุด</p>
+          <p>ALL ARTICLES - บทความทั้งหมด</p>
           <div className="row">
           {allArticle.map((val) => (
             <div className="col-sm-6">

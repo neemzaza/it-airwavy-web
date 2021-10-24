@@ -76,7 +76,8 @@ const Home = () => {
 
     }
     
-    var upScroll = window.pageYOffset
+    useEffect(() => {
+        var upScroll = window.pageYOffset
     $(document).on('scroll', () => {
         if ($("#spy").offset().top >= $("#boxsub").position().top) { //On BoxSub
             $(".stickyboxsub").addClass("fixed-top")
@@ -104,7 +105,7 @@ const Home = () => {
             // $(".boxsub").css("margin-left", $(".boxsub").position().left + "px")
         }
 
-
+        // Scroll to Bio
         if ($("#spy").offset().top >= $("#about").position().top && $("#spy").offset().top < $("#ex").position().top) {
             // Activing Menu...
             $("#exmenu").removeClass("active")
@@ -114,12 +115,14 @@ const Home = () => {
 
 
         }
+        // Scroll to Example Video
         else if ($("#spy").offset().top >= $("#ex").position().top && $("#spy").offset().top < $("#game").position().top) {
             $("#aboutmenu").removeClass("active")
             $("#gamemenu").removeClass("active")
 
             $("#exmenu").addClass("active")
         }
+        // Scroll to Game wa
         else if ($("#spy").offset().top >= $("#game").position().top) {
             $("#aboutmenu").removeClass("active")
             $("#exmenu").removeClass("active")
@@ -142,14 +145,7 @@ const Home = () => {
         }
 
             const downScroll = window.pageYOffset
-            if (upScroll > downScroll) {
-                // console.log("worked!")
-            } else {
-                $("#textinner").addClass("animate__bounceIn")
-                $("#textinner").removeClass("animate__bounceOut")
-                // console.log("down worked!")
-            }
-        
+
             if ($("#spy").offset().top >= 350) {
                 $("hr").css("width", "100%")
                 // $("#navbar").css("top", "-100px")
@@ -158,17 +154,10 @@ const Home = () => {
         
                 $("#timeb2").removeClass("animate__fadeOutDown")
                 $("#timeb2").addClass("animate__fadeInUp")
-                // $("#timeb2").addClass("animate__delay-1s")
-                // console.log("hidden!!")
-                // if ($("#spy").offset().top >= $("#hereshow").position().top) {
-                //     $("#navbar").css("top", "0px")
-                // } else {
-                //     $("#navbar").css("top", "-100px")
-                // }
             }
         
             else if ($("#spy").offset().top <= 3) {
-                $("#navbar").css("height", "60px")
+                $("#navbar").css("height", "3.7rem")
         
                 $("#navbar").css("backdrop-filter", "blur(0px)")
                 // $("#navbar").css("background", "transparent")
@@ -178,7 +167,8 @@ const Home = () => {
                 //$("#textinner").addClass("animate__bounceIn")
         
             } else { // This is #spy > 1 but in 349
-                $("#navbar").css("height", "51px")
+                $("#navbar").css("height", "3.2rem")
+                
                 $("hr").css("width", "0%")
                 $("#navbar").css("top", "0px")
         
@@ -191,7 +181,8 @@ const Home = () => {
                 $("#timeb2").addClass("animate__fadeOutDown")
             }
             upScroll = downScroll
-        
+    
+
             //progress of page end
             for (let i = 0; i <= ($("#spy").offset().top / $("#mainPage").height()) * 100; i++) {
                 $(".progressbar").css("width", i + "%")
@@ -199,6 +190,7 @@ const Home = () => {
             }
     
     })
+    }, [])
     return (
         <div id="mainPage">
             {/* <!-- This is NavBar!! --> */}
@@ -218,11 +210,11 @@ const Home = () => {
 
             {/* Welcome Message (this is sale ขายของ) */}
             <div className="welcome">
-                <div className="container p-5">
+                <div className="container p-4">
                     <br /><br /><br /><br /><br />
                     <div className="glow">
-                        <div className="cardwow"><h1 className="twocongrat rewardFont"><i className="bi bi-award"></i> {subCount} Sub Passed</h1></div>
-                        <h1 className="text-white big1">ขอบคุณทุกคน! 🙏🏻</h1>
+                        <div className="cardwow"><h1 className="twocongrat rewardFont"><i className="bi bi-award"></i> {totalSub} subscriber</h1></div>
+                        <h1 className="big1">ขอบคุณทุกคน!</h1>
                         <h1 className="primarytheme bigprime">สำหรับ {totalSub} <br />SUBSCRIBER</h1>
                         <br />
                         <h5 className="text-white noglow highlight hi1">กดติดตามเพื่อไม่พลาดเทคนิคดีๆ จาก Airwavy!!</h5>

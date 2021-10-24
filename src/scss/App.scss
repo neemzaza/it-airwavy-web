@@ -14,17 +14,21 @@
     padding-top: 50vh;
 }
 
-@keyframes bganime {
-    from {
-        background-position: 0;
-    } to {
-        background-position: 0 1500px;
-    }
+.noglow {
+    filter: none;
 }
+
+// @keyframes bganime {
+//     from {
+//         background-position: 0;
+//     } to {
+//         background-position: 0 1500px;
+//     }
+// }
     /* Welcome Picture URL */
     .welcome {
-        background: url('../img/Moon.png'); /* joinbg.jpg */
-        animation: bganime 540s infinite linear;
+        background: linear-gradient(90deg, rgb(26, 26, 26), rgb(0, 44, 70));
+        color: rgb(209, 209, 209);
     }
     .twocongrat {
         background: linear-gradient(rgb(255, 255, 255), rgb(104, 104, 104));
@@ -281,7 +285,7 @@
         width: auto;
     }
     .paratextPurple {
-        border-left: 6px solid rgb(136, 31, 255);
+        border-left: 6px solid rgb(29, 255, 161);
         padding: 10px;
         background: #383838;
         text-align: left;
@@ -432,13 +436,15 @@
     }
     .highlight {
         background: rgb(0, 89, 255);
-        filter: none;
+        filter: none !important;
         max-width: 450px;
         height: 26px;
         width: 0%;
         overflow: hidden;
         transition-delay: all .7s;
         transition: .5s;
+        padding: 0.1rem;
+        border-radius: 4px;
     }
     .navbar-brand {
         letter-spacing: 2.4px;
@@ -522,22 +528,23 @@
             width: 0%;
         }
         .big-title.activate {
-            animation: textshowwhentyped 6.5s steps(53) forwards;
+            animation: textshowwhentyped 2.5s steps(33) forwards;
         }
 
         .big-title.activate::after {
             content: "_";
-            position: absolute;
-            left: 70px;
-            animation: 1.2s typing steps(10) forwards;
+            position: relative;
+            // left: 70px;
+            margin-left: 70px;
+            animation: .5s typing steps(43) forwards;   
             transition: .4s;
         }
 
         @keyframes typing {
             from {
-                left: 70px;
+                margin-left: 70px;
             } to {
-                left: 330px;
+                margin-left: auto;
             }
         }
 
@@ -559,9 +566,9 @@
             display: grid;
             row-gap: 0.3rem;
             background: rgba(0, 0, 0, 0.089);
-            border-radius: 1rem;
+            border-radius: 0.5rem;
             padding: 0.5rem;
-            backdrop-filter: blur(7px);
+            backdrop-filter: blur(20px);
 
             .line-progress {
                 background: #2c2c2c;
@@ -1034,8 +1041,14 @@
         color: rgb(207, 207, 207);
         
         img {
-            max-width: 79rem;
+            max-width: 40rem;
             width: 100%;
+            // background: #0b4892;
+            border-radius: 0.5rem;
+
+            &.icon {
+                width: 2rem;
+            }
         }
     }
 
@@ -1045,7 +1058,7 @@
         text-decoration: none;
         color: #fff;
         background: #000;
-        transition: top .1s ease;
+        transition: .1s ease;
         top: 0;
     }
 
@@ -1073,6 +1086,10 @@
         height: 0.3rem;
         background: #fff;
         border-radius: 1rem;
+    }
+
+    .post-article:active {
+        border: 3px inset #fff;
     }
 
     .card.article {

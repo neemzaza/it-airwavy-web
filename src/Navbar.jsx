@@ -39,9 +39,9 @@ export default function Navbar() {
                         <div className="navbar-nav ms-auto">
 
                             <NavLink className="home nav-link normal whenhover" aria-current="page" to="/" exact={true} ><><i className="bi bi-house-fill"></i><menutext>&nbsp;แนะนำตัว</menutext></></NavLink>
-                            <a className="discordmenu nav-link normal whenhover" aria-current="page" href="/#discord"><i className="bi bi-discord" /><menutext>&nbsp;เข้า Discord ของผม</menutext></a>
-                            <NavLink className="devmenu nav-link normal whenhover" aria-current="page" to="/dev"><><img src={DevLogo} width="25"/><menutext>&nbsp;AIRWAVY DEVELOPER</menutext></></NavLink>
+                            <NavLink className="devmenu nav-link normal whenhover" aria-current="page" to="/dev"><><img src={DevLogo} width="25"/><menutext>&nbsp;โปรเจ็กท์ของ Airwavy</menutext></></NavLink>
                             <NavLink className="armenu nav-link normal whenhover" aria-current="page" to="/articles"><><i class="bi bi-stickies"></i><menutext>&nbsp;บทความของ Airwavy</menutext></></NavLink>
+                            <a className="discordmenu nav-link normal whenhover" aria-current="page" href="/#discord"><i className="bi bi-discord" /><menutext>&nbsp;เข้า Discord ของผม</menutext></a>
                             <div className="linew btn-switch-light-and-dark" id="btnSwitch" ><i class="bi bi-sun toggle-theme icon-light"></i><i class="bi bi-moon-fill toggle-theme icon-dark"></i></div>
                         </div>
                     </div>
@@ -49,9 +49,9 @@ export default function Navbar() {
                 <div className="mobileshow">
                     <br/><br/><br/>
                         <NavLink className="home nav-link normal" aria-current="page" to="/" exact={true}><b><i className="bi bi-house-fill"></i>&nbsp;แนะนำตัว</b></NavLink>
-                        <a className="discordmenu nav-link normal" aria-current="page" to="/#discord"><i className="bi bi-discord" /><menutext>&nbsp;เข้า Discord ของผม</menutext></a>
                         <NavLink className="devmenu nav-link normal" aria-current="page" to="/dev"><b><i className="bi bi-code-slash"></i>&nbsp;AIRWAVY DEVELOPER</b></NavLink>
                         <NavLink className="armenu nav-link normal" aria-current="page" to="/articles"><><i class="bi bi-stickies"></i><menutext>&nbsp;บทความของ Airwavy</menutext></></NavLink>
+                        <a className="discordmenu nav-link normal" aria-current="page" to="/#discord"><i className="bi bi-discord" /><menutext>&nbsp;เข้า Discord ของผม</menutext></a>
                 </div>
             </nav>
         </>

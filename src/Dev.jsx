@@ -221,7 +221,10 @@ export default function Dev() {
                 </p>
               </div>
             </div>
-            <div className="center">
+          
+          </div>
+          <br/>
+          <div className="center">
                 <a
                 className="btn btn-outline-primary btn-sm toggletobelow"
                 href="#tuwavyzone"
@@ -230,7 +233,6 @@ export default function Dev() {
                 >
                 <i className="iconconfig1 bi bi-arrow-down-circle"></i><p>Next : TuWavy project</p>
                 </a>
-          </div>
           </div>
         </div>
         
